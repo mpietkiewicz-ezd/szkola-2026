@@ -296,7 +296,7 @@
  </div></div>
 </section>
 <section id="gameView" class="game hidden"><div class="game-head"><div><div id="phaseText" class="eyebrow">FAZA ALARMU</div><h1 id="phaseTitle">Sytuacja</h1><div class="row"><span class="chip red"><span class="dot"></span><span id="alarmState">ALARM AKTYWNY</span></span><span class="chip amber" id="clockState">T+00 min</span><span id="profileBadge" class="chip"></span></div></div><div><div class="spread" style="margin-bottom:9px"><span class="muted" id="stepCount">Etap 1</span><span class="author-stamp">AUTOR: M. PIETKIEWICZ</span></div><div class="progress"><div id="progressFill"></div></div></div></div>
- <section id="alarmConsole" class="alarm-console panel hidden" aria-label="Odtwarzacz sygnałów alarmowych"><div class="alarm-console-intro"><strong>SYGNAŁY ALARMOWE — ODSŁUCH</strong><span>Oba sygnały trwają pełne 3:00. Przed odtwarzaniem sprawdź głośność. Odsłuch przeznaczony przede wszystkim do przygotowania personelu; ćwiczenia z dziećmi dostosuj do wieku i nie używaj bodźców wywołujących lęk.</span></div><div class="alarm-controls"><button type="button" id="playDeclare" class="alarm-button announce">▶ OGŁOSZENIE ALARMU <small>modulowany · 3:00</small></button><button type="button" id="playClear" class="alarm-button clear">▶ ODWOŁANIE ALARMU <small>jednostajny · 3:00</small></button><button type="button" id="stopAlarm" class="btn ghost">■ ZATRZYMAJ</button></div><div class="audio-meta"><span id="audioStatus" role="status" aria-live="polite">Wybierz sygnał — odtwarzanie nie uruchamia się automatycznie.</span><span id="audioCounter" class="audio-timer">00:00 / 03:00</span></div><div class="audio-progress" aria-hidden="true"><div id="audioProgress"></div></div><audio id="alarmAudio" preload="none"></audio></section>
+ <section id="alarmConsole" class="alarm-console panel hidden" aria-label="Odtwarzacz sygnałów alarmowych"><div class="alarm-console-intro"><strong>SYGNAŁY ALARMOWE — ODSŁUCH</strong><span>Oba sygnały trwają pełne 3:00. To syntetyczna rekonstrukcja ćwiczebna wzoru sygnału, a nie nagranie konkretnego systemu alarmowania. Przed odtwarzaniem sprawdź głośność. Odsłuch przeznaczony przede wszystkim do przygotowania personelu; ćwiczenia z dziećmi dostosuj do wieku i nie używaj bodźców wywołujących lęk.</span></div><div class="alarm-controls"><button type="button" id="playDeclare" class="alarm-button announce">▶ OGŁOSZENIE ALARMU <small>modulowany · 3:00</small></button><button type="button" id="playClear" class="alarm-button clear">▶ ODWOŁANIE ALARMU <small>jednostajny · 3:00</small></button><button type="button" id="stopAlarm" class="btn ghost">■ ZATRZYMAJ</button></div><div class="audio-meta"><span id="audioStatus" role="status" aria-live="polite">Wybierz sygnał — odtwarzanie nie uruchamia się automatycznie.</span><span id="audioCounter" class="audio-timer">00:00 / 03:00</span></div><div class="audio-progress" aria-hidden="true"><div id="audioProgress"></div></div><audio id="alarmAudio" preload="none"></audio></section>
  <section id="alertChannelPanel" class="panel alert-channel hidden" aria-label="Przykłady oficjalnych kanałów ostrzegania">
   <div class="alert-channel-head"><div><div class="eyebrow">KANAŁY OSTRZEGANIA · TYLKO W ODPOWIEDNIM ETAPIE</div><h2 id="alertChannelTitle">Komunikat do ludności</h2></div><span class="chip amber">ĆWICZENIE</span></div>
   <div class="alert-channel-grid">
@@ -1345,51 +1345,105 @@ function reportText(){const o=E.outcome(game),r=readinessState();return ['BEZPIE
  }
 text('finalScore',o.score);text('resultStatus',o.warning.length?'UWAGA: STAN OPERACYJNY NIEPOTWIERDZONY':'W MODELU BRAK NIEROZWIĄZANYCH OGRANICZEŃ');$('resultStatus').classList.toggle('good',!o.warning.length);const root=$('reportNumbers');root.replaceChildren();const vals=[['Przebieg',`T+${o.minutes} min`],['Zaplanowano',`${o.plan.placed} / ${o.plan.total}`],['Potwierdzona lokalizacja',`${o.plan.confirmedPlaced} / ${o.plan.total}`],['Osoby z zewnątrz bez osłony',o.outside.unplaced],['Decyzje i przydziały',`${game.log.length} etapów`],['Zdarzenia dodatkowe',`${o.events.length}`],['Kod scenariusza',game.cfg.seed]];for(const [k,v] of vals){const d=el('div',{class:'spread'});d.append(el('span',{class:'muted'},k),el('b',{},v));root.append(d);}const risk=$('reportRisks');risk.replaceChildren();for(const item of (o.warning.length?o.warning:['Brak dodatkowych nierozwiązanych ograniczeń w modelu.']))risk.append(el('div',{class:'advice'},item));const rec=$('reportAdvice');rec.replaceChildren();advice().forEach(a=>rec.append(el('div',{class:'advice'},a)));const timeline=$('reportTimeline');timeline.replaceChildren();game.log.forEach((r,i)=>{const div=el('div',{class:'timeline-item'});div.append(el('b',{},`${String(i+1).padStart(2,'0')}. ${r.title}`),el('p',{},`Decyzja: ${r.choice}`),el('p',{},r.feedback),el('small',{},`${r.points}/${r.max} pkt`));if(r.details)div.append(el('p',{},r.details));timeline.append(div);});const sources=$('sources');sources.replaceChildren();for(const [name,url] of D.SOURCE_LINKS){const li=el('li'),a=el('a',{href:url,target:'_blank',rel:'noopener noreferrer'},name);li.append(a);sources.append(li);}window.scrollTo({top:0,behavior:'instant'});}
 function download(){const blob=new Blob(['\ufeff'+reportText()],{type:'text/plain;charset=utf-8'}),url=URL.createObjectURL(blob),a=el('a',{href:url,download:'bezpieczne-dzieci-atak-z-powietrza-raport.txt'});document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);}
-const AUDIO_FILES={declare:'assets/alarm-ogloszenie.mp3',clear:'assets/alarm-odwolanie.mp3'};
 const AUDIO_LABELS={declare:'Ogłoszenie alarmu — sygnał modulowany',clear:'Odwołanie alarmu — sygnał jednostajny'};
+let alarmCtx=null,alarmOsc=null,alarmGain=null,alarmLfo=null,alarmLfoGain=null,alarmStartedAt=0,alarmStopTimer=null,alarmRaf=null,alarmSynthetic=false;
+function alarmAudioContext(){
+ const C=window.AudioContext||window.webkitAudioContext;
+ if(!C)return null;
+ if(!alarmCtx)alarmCtx=new C();
+ return alarmCtx;
+}
+function disposeAlarmNodes(){
+ if(alarmStopTimer){clearTimeout(alarmStopTimer);alarmStopTimer=null;}
+ if(alarmRaf){cancelAnimationFrame(alarmRaf);alarmRaf=null;}
+ for(const n of [alarmLfo,alarmOsc]){if(n){try{n.stop();}catch(e){}try{n.disconnect();}catch(e){}}}
+ for(const n of [alarmLfoGain,alarmGain]){if(n){try{n.disconnect();}catch(e){}}}
+ alarmOsc=alarmGain=alarmLfo=alarmLfoGain=null;
+ alarmSynthetic=false;
+}
 function showAudioProgress(){
- const a=$('alarmAudio');const total=Number.isFinite(a.duration)&&a.duration>0?a.duration:180;
- const t=Math.max(0,Math.min(total,a.currentTime||0));
+ const total=180;
+ let t=0;
+ if(alarmSynthetic&&activeAudioKind&&alarmCtx)t=Math.max(0,Math.min(total,alarmCtx.currentTime-alarmStartedAt));
  const mm=x=>`${String(Math.floor(x/60)).padStart(2,'0')}:${String(Math.floor(x%60)).padStart(2,'0')}`;
  text('audioCounter',`${mm(t)} / ${mm(total)}`);
  $('audioProgress').style.width=`${Math.max(0,Math.min(100,100*t/total))}%`;
 }
+function alarmProgressLoop(){
+ showAudioProgress();
+ if(alarmSynthetic&&activeAudioKind)alarmRaf=requestAnimationFrame(alarmProgressLoop);
+}
 function stopSound(){
- const a=$('alarmAudio');a.pause();a.currentTime=0;activeAudioKind=null;
+ const a=$('alarmAudio');
+ try{a.pause();a.removeAttribute('src');a.load();}catch(e){}
+ disposeAlarmNodes();
+ activeAudioKind=null;
  for(const id of ['playDeclare','playClear'])$(id).setAttribute('aria-pressed','false');
  text('audioStatus','Odtwarzanie zatrzymane. Kliknij wybrany sygnał, aby rozpocząć od początku.');
  showAudioProgress();
 }
+function finishAlarmSound(){
+ disposeAlarmNodes();
+ activeAudioKind=null;
+ for(const id of ['playDeclare','playClear'])$(id).setAttribute('aria-pressed','false');
+ text('audioStatus','Sygnał dobiegł końca.');
+ text('audioCounter','03:00 / 03:00');
+ $('audioProgress').style.width='100%';
+}
 async function playSound(kind){
- const a=$('alarmAudio');
- if(activeAudioKind===kind && !a.paused){stopSound();return;}
- a.pause();
- a.src=AUDIO_FILES[kind];
- a.currentTime=0;
- activeAudioKind=kind;
- $('playDeclare').setAttribute('aria-pressed',String(kind==='declare'));
- $('playClear').setAttribute('aria-pressed',String(kind==='clear'));
- text('audioStatus',`Odtwarzanie: ${AUDIO_LABELS[kind]} — rekonstrukcja ćwiczebna, nie realny alarm.`);
- showAudioProgress();
- try{await a.play();}
- catch(e){
+ if(activeAudioKind===kind){stopSound();return;}
+ if(activeAudioKind)stopSound();
+ const ctx=alarmAudioContext();
+ if(!ctx){
+  text('audioStatus','Ta przeglądarka nie obsługuje syntezy dźwięku Web Audio. Użyj aktualnej wersji Chrome, Edge, Firefox lub Safari.');
+  return;
+ }
+ try{
+  await ctx.resume();
+  alarmOsc=ctx.createOscillator();
+  alarmGain=ctx.createGain();
+  alarmOsc.type='sine';
+  alarmGain.gain.setValueAtTime(0.0001,ctx.currentTime);
+  alarmGain.gain.exponentialRampToValueAtTime(0.055,ctx.currentTime+0.08);
+  if(kind==='declare'){
+   // Rekonstrukcja ćwiczebna: dźwięk modulowany przez płynną zmianę częstotliwości.
+   alarmOsc.frequency.value=650;
+   alarmLfo=ctx.createOscillator();
+   alarmLfoGain=ctx.createGain();
+   alarmLfo.type='sine';
+   alarmLfo.frequency.value=0.42;
+   alarmLfoGain.gain.value=210;
+   alarmLfo.connect(alarmLfoGain);
+   alarmLfoGain.connect(alarmOsc.frequency);
+   alarmLfo.start();
+  }else{
+   // Rekonstrukcja ćwiczebna: dźwięk jednostajny.
+   alarmOsc.frequency.value=650;
+  }
+  alarmOsc.connect(alarmGain);
+  alarmGain.connect(ctx.destination);
+  alarmStartedAt=ctx.currentTime;
+  alarmSynthetic=true;
+  activeAudioKind=kind;
+  $('playDeclare').setAttribute('aria-pressed',String(kind==='declare'));
+  $('playClear').setAttribute('aria-pressed',String(kind==='clear'));
+  text('audioStatus',`Odtwarzanie: ${AUDIO_LABELS[kind]} — syntetyczna rekonstrukcja ćwiczebna.`);
+  alarmOsc.start();
+  alarmProgressLoop();
+  alarmStopTimer=setTimeout(finishAlarmSound,180000);
+ }catch(e){
+  disposeAlarmNodes();
   activeAudioKind=null;
   for(const id of ['playDeclare','playClear'])$(id).setAttribute('aria-pressed','false');
-  text('audioStatus','Nie udało się odtworzyć dźwięku. Sprawdź ustawienia przeglądarki i spróbuj ponownie.');
+  text('audioStatus','Nie udało się uruchomić dźwięku. Sprawdź, czy karta lub przeglądarka nie ma wyciszonego dźwięku, i spróbuj ponownie.');
  }
 }
 function initAudio(){
- const a=$('alarmAudio');
  $('playDeclare').addEventListener('click',()=>playSound('declare'));
  $('playClear').addEventListener('click',()=>playSound('clear'));
  $('stopAlarm').addEventListener('click',stopSound);
  $('speakVoice').addEventListener('click',speakVoice);
  $('stopVoice').addEventListener('click',stopVoice);
-
- a.addEventListener('timeupdate',showAudioProgress);
- a.addEventListener('loadedmetadata',showAudioProgress);
- a.addEventListener('ended',()=>{activeAudioKind=null;for(const id of ['playDeclare','playClear'])$(id).setAttribute('aria-pressed','false');text('audioStatus','Sygnał dobiegł końca.');showAudioProgress();});
- a.addEventListener('error',()=>{if(activeAudioKind){activeAudioKind=null;for(const id of ['playDeclare','playClear'])$(id).setAttribute('aria-pressed','false');text('audioStatus','Nie udało się odtworzyć dźwięku. Spróbuj ponownie.');}});
  showAudioProgress();
 }
 function init(){$('studentCountInput').addEventListener('input',updateSetupSummary);$('capacityInput').addEventListener('input',()=>{updateSetupSummary();document.querySelectorAll('[data-select=capacity] .pick').forEach(b=>b.setAttribute('aria-pressed',String(cfg.capacity===Number(b.textContent))));});$('seedInput').addEventListener('input',()=>cfg.seed=$('seedInput').value);$('startBtn').onclick=start;$('restartTop').onclick=()=>{if(!game||confirm('Rozpocząć nowe ćwiczenie? Aktualny przebieg zostanie utracony.'))restart();};$('againBtn').onclick=restart;$('continueBtn').onclick=continueGame;$('assignBtn').onclick=assign;$('autoPlanBtn').onclick=auto;$('saveGroupName').onclick=saveGroupName;$('saveZoneName').onclick=saveZoneName;$('undoBtn').onclick=undo;$('resetPlanBtn').onclick=resetPlan;$('confirmPlanBtn').onclick=confirmPlan;$('runExecutionBtn').onclick=runExecutionBatch;$('finishExecutionBtn').onclick=finishExecution;$('downloadBtn').onclick=download;$('printBtn').onclick=()=>window.print();initAudio();document.addEventListener('keydown',e=>{if(!game||$('gameView').classList.contains('hidden')||e.ctrlKey||e.altKey||e.metaKey||/INPUT|TEXTAREA|SELECT|BUTTON/.test(document.activeElement?.tagName||''))return;if(!awaitingContinue&&['1','2','3'].includes(e.key)&&!['plan','replan'].includes(E.current(game)?.id)){const o=E.displayOptions(game,E.current(game))[Number(e.key)-1];if(o)answer(o.id);}else if(awaitingContinue&&e.key==='Enter')continueGame();});renderSetup();show('setupView');}

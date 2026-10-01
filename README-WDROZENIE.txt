@@ -37,3 +37,7 @@ TESTY WYKONANE PRZED ZAPAKOWANIEM
 
 UWAGA
 Symulator pozostaje narzędziem edukacyjnym. Nie kwalifikuje obiektów, nie nadaje im statusu prawnego i nie zastępuje procedur placówki, rozpoznania budynku, ekspertyzy ani poleceń właściwych organów i służb.
+
+
+WERSJA 5.1 — AUDIO
+Odtwarzacz syren nie korzysta już z plików MP3. Sygnały są generowane lokalnie w przeglądarce przez Web Audio API jako syntetyczna rekonstrukcja ćwiczebna. Dzięki temu odsłuch działa również wtedy, gdy hosting nie udostępnił katalogu assets, a strona jest lżejsza.
