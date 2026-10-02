@@ -1,43 +1,51 @@
-BEZPIECZNE DZIECI — edycja 5.0
+BEZPIECZNE DZIECI — edycja 5.2
 Aktualizacja merytoryczna: 01.10.2026
 Autor: Marcin Pietkiewicz — https://marcin-pietkiewicz.pl/
 
 WDROŻENIE
-Wgraj do katalogu głównego bezpiecznedzieci.com cały zestaw:
+Wgraj do katalogu głównego bezpiecznedzieci.com CAŁĄ zawartość paczki z zachowaniem struktury katalogów:
 - index.html
+- guide.css
 - favicon.png
 - og-image.png
 - robots.txt
 - sitemap.xml
-- folder assets/
-  - alarm-ogloszenie.mp3
-  - alarm-odwolanie.mp3
+- procedura-atak-z-powietrza-szkola/index.html
+- sygnaly-alarmowe-szkola/index.html
+- miejsce-schronienia-w-szkole/index.html
+- rodzice-alarm-w-szkole/index.html
+- punkt-schronienia-a-miejsce-schronienia/index.html
 
-Nie wgrywaj samego index.html bez folderu assets — odtwarzacz pełnych sygnałów alarmowych nie będzie miał plików audio.
+Nie ma już katalogu assets ani zewnętrznych plików audio. Odsłuch wzorów sygnałów jest syntetyczną rekonstrukcją generowaną lokalnie przez Web Audio API.
 
-NAJWAŻNIEJSZE ZMIANY 5.0
-1. Rozdzielono formalne formy ochrony (schron, ukrycie, MDS, punkt schronienia) od organizacyjnego „miejsca schronienia” w procedurze placówki.
-2. Usunięto logikę pozwalającą po alarmie prowadzić dzieci do punktu/miejsca w innym budynku tylko dlatego, że trasa i czas są korzystne.
-3. Dodano wyjątek: opuszczenie budynku przy bezpośrednim zagrożeniu dla życia/zdrowia i poleceniu właściwego organu lub służb wraz ze wskazaniem bezpiecznej drogi.
-4. Dodano audyt gotowości 60 s: dostęp i klucze, dwa wyjścia, oświetlenie, łączność, wyposażenie, listy obecności, części wspólne, rodzice, role/zastępstwa, ćwiczenia i szczególne potrzeby.
-5. Rozbudowano zasady dotyczące rodziców, meldunków, list obecności, pozostawiania rzeczy osobistych i ćwiczeń z dziećmi.
-6. Dodano statyczną sekcję wiedzy i FAQ indeksowalne przez wyszukiwarki.
-7. Rozbudowano SEO: title, description, canonical, Open Graph/Twitter, JSON-LD, sitemap.xml, robots.txt, obraz 1200×630.
-8. Autor w stopce prowadzi do https://marcin-pietkiewicz.pl/.
-9. Dwa MP3 wyjęto z base64 w HTML do osobnych plików. HTML zmniejszył się z ok. 4,07 MB do ok. 245 kB.
-10. Przykładowy Alert RCB i jego odwołanie zaktualizowano do komunikatów z 28.09.2026.
+NAJWAŻNIEJSZE ZMIANY 5.2
+1. Zmienny kontekst początku alarmu. Ten sam kod zdarzeń odtwarza ten sam wariant:
+   - zajęcia w salach,
+   - przerwa (szkoła),
+   - posiłek,
+   - grupa na terenie zewnętrznym,
+   - alarm tuż przed zakończeniem zajęć.
+2. Po głównym etapie pojawiają się 3 albo 4 deterministycznie losowane „injecty”. W puli są m.in.:
+   - zablokowana trasa,
+   - brak energii,
+   - utrata łączności,
+   - uczeń poza własną grupą,
+   - dziecko wymagające przygotowanego leku,
+   - dym lub zapach gazu przy używanym miejscu,
+   - uszkodzenie przeszklenia / uraz,
+   - wzmożony napływ rodziców,
+   - problemy z meldunkami i obiegiem poleceń.
+3. Dodano pięć osobnych, indeksowalnych poradników SEO, każdy z unikalnym title, description, canonical, Open Graph, Article JSON-LD, breadcrumbami, linkami wewnętrznymi i źródłami oficjalnymi.
+4. Strona główna ma widoczny hub „Poradniki” prowadzący do nowych treści.
+5. Rozbudowano merytorykę o: działanie osoby poza grupą, przygotowane produkty lecznicze, brak windy, wariant alarmu podczas przerwy/posiłku/pobytu na zewnątrz i przed końcem zajęć.
+6. Doprecyzowano różnicę między pełnym 3-minutowym wzorem alarmu / odwołania a 1-minutowym sygnałem alarmu ćwiczebnego/treningowego.
+7. Zaktualizowano sitemap.xml do sześciu indeksowalnych adresów.
 
-TESTY WYKONANE PRZED ZAPAKOWANIEM
-- poprawność składni wszystkich skryptów JavaScript: OK,
-- poprawność JSON-LD: OK,
-- brak zduplikowanych identyfikatorów HTML: OK,
-- test logiki: brak formalnej formy ochrony, formalny punkt/schron/ukrycie/MDS, miejsce poza placówką i wyjątek z poleceniem służb: OK,
-- trzy pełne automatyczne przejścia scenariusza (w tym wariant z miejscem poza placówką): OK,
-- brak starej odpowiedzi „korzystam z punktu przy bezpiecznej trasie” i brak zewnętrznego miejsca jako strefy przydziału: OK.
+PODSTAWY MERYTORYCZNE
+- „Procedura reagowania w przypadku zagrożenia atakiem z powietrza dla szkół i przedszkoli” — wzorzec do dostosowania do konkretnej placówki.
+- aktualna instrukcja MSWiA/KGPSP dotycząca zagrożenia atakiem z powietrza,
+- rozporządzenie MSWiA z 14 maja 2025 r. w sprawie alarmów i komunikatów ostrzegawczych,
+- ustawa o ochronie ludności i obronie cywilnej wraz z nowelizacją z 2026 r.
 
 UWAGA
-Symulator pozostaje narzędziem edukacyjnym. Nie kwalifikuje obiektów, nie nadaje im statusu prawnego i nie zastępuje procedur placówki, rozpoznania budynku, ekspertyzy ani poleceń właściwych organów i służb.
-
-
-WERSJA 5.1 — AUDIO
-Odtwarzacz syren nie korzysta już z plików MP3. Sygnały są generowane lokalnie w przeglądarce przez Web Audio API jako syntetyczna rekonstrukcja ćwiczebna. Dzięki temu odsłuch działa również wtedy, gdy hosting nie udostępnił katalogu assets, a strona jest lżejsza.
+Symulator i poradniki mają charakter edukacyjny. Nie kwalifikują obiektów, nie nadają im statusu prawnego i nie zastępują procedury konkretnej placówki, rozpoznania budynku, ekspertyzy ani poleceń właściwych organów i służb.
