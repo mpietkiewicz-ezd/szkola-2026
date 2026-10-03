@@ -62,7 +62,7 @@
           "name": "ochrona ludności"
         }
       ],
-      "dateModified": "2026-10-02",
+      "dateModified": "2026-10-03",
       "inLanguage": "pl-PL",
       "author": {
         "@id": "https://marcin-pietkiewicz.pl/#person"
@@ -358,11 +358,23 @@ body{background:radial-gradient(circle at 18% -10%,#123e4d 0,transparent 33%),ra
 @media(max-width:1280px){.hero{grid-template-columns:minmax(0,1fr) minmax(430px,.9fr)}}
 @media(max-width:980px){.hero{grid-template-columns:1fr;min-height:0}.hero-visual{min-height:390px;border-left:0;border-top:1px solid #244d5d}.hero-visual img{object-position:50% 50%}.hero-visual:before{background:linear-gradient(180deg,#071824aa 0%,transparent 22%,#06131f88 100%)}}
 @media(max-width:620px){.hero-visual{min-height:270px}.hero-photo-label{left:16px;bottom:15px;font-size:9px;padding:8px 10px}.hero-copy{padding:27px 20px 22px}}
+
+/* Misja: Bezpieczni — osobny tryb edukacyjny dla dzieci */
+:root{--kids-violet:#a98cff;--kids-violet2:#7f63ef;--kids-pink:#df9cff}
+.site-nav a.kids-nav{color:#e4dbff;border:1px solid #725cc055;background:#2b215455;padding:9px 12px}
+.site-nav a.kids-nav:hover{color:#fff;background:#49398a;border-color:#a98cff}
+.kids-promo{order:2;position:relative;overflow:hidden;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr);gap:22px;padding:30px 32px;border:1px solid #6955a8;border-radius:20px;background:radial-gradient(circle at 86% 8%,#c29dff29 0,transparent 33%),linear-gradient(128deg,#17152d 0%,#251d4c 48%,#17243a 100%);box-shadow:0 20px 58px #0003}
+.kids-promo:before{content:"";position:absolute;width:330px;height:330px;border-radius:50%;right:-120px;bottom:-190px;background:#9a7bff24;filter:blur(4px)}
+.kids-promo-copy,.kids-promo-visual{position:relative;z-index:2}.kids-promo-kicker{display:inline-flex;align-items:center;gap:7px;border:1px solid #9c83e5;border-radius:999px;padding:6px 10px;background:#3a2d6d;color:#f0eaff;font-size:10px;font-weight:950;letter-spacing:.1em;text-transform:uppercase}.kids-promo h2{margin:12px 0 10px;font-size:clamp(25px,3vw,39px);letter-spacing:-.035em;line-height:1.05}.kids-promo h2 span{color:#c8b7ff}.kids-promo p{margin:0;max-width:870px;color:#d6d5e7;line-height:1.7;font-size:14px}.kids-keywords{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0 18px}.kids-keywords span{border:1px solid #6f629d;border-radius:999px;background:#241d43;padding:6px 9px;color:#d9d1f8;font-size:10px;font-weight:800}.kids-cta{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 18px;border:1px solid #c6b7ff;border-radius:12px;background:linear-gradient(135deg,#8b6df1,#bd8cf4);color:#fff!important;text-decoration:none;font-weight:950;box-shadow:0 10px 28px #6e52c843}.kids-cta:hover{background:linear-gradient(135deg,#9d82f5,#d29df8)}.kids-privacy{margin-top:12px!important;color:#a9a8c2!important;font-size:11px!important;font-weight:700}.kids-promo-visual{min-height:190px;display:flex;align-items:center;justify-content:center}.kids-shield{width:156px;height:172px;display:grid;place-items:center;background:linear-gradient(150deg,#b9a4ff,#7b63e8);clip-path:polygon(50% 0,94% 17%,86% 73%,50% 100%,14% 73%,6% 17%);filter:drop-shadow(0 18px 30px #0005)}.kids-shield:before{content:"✓";display:grid;place-items:center;width:72px;height:72px;border-radius:24px;background:#17152d;color:#d9d0ff;font-size:47px;font-weight:950;transform:rotate(-4deg)}.kids-orbit{position:absolute;width:260px;height:160px;border:1px dashed #ad93ff66;border-radius:50%;transform:rotate(-12deg)}.kids-orbit i{position:absolute;display:grid;place-items:center;width:42px;height:42px;border:1px solid #8775bf;border-radius:13px;background:#211b3d;font-style:normal;font-size:20px}.kids-orbit i:nth-child(1){left:-8px;top:52px}.kids-orbit i:nth-child(2){right:8px;top:2px}.kids-orbit i:nth-child(3){right:-8px;bottom:18px}.kids-orbit i:nth-child(4){left:45px;bottom:-13px}
+.landing>.setup{order:3}.landing>.stack>.rules-panel{order:4}
+@media(max-width:900px){.kids-promo{grid-template-columns:1fr;padding:24px}.kids-promo-visual{min-height:160px}.kids-shield{width:128px;height:141px}.kids-orbit{width:235px;height:140px}}
+@media(max-width:620px){.kids-promo{padding:20px 18px;border-radius:17px}.kids-promo h2{font-size:28px}.kids-promo p{font-size:13px}.kids-keywords{margin-top:13px}.kids-promo-visual{min-height:145px}.kids-privacy{font-size:10px!important}}
+
 </style></head><body>
 <header class="top"><div class="container top-shell">
   <a class="brand" href="#start" aria-label="Bezpieczne Dzieci — strona główna"><div class="logo"><span>BD</span></div><div><b>BEZPIECZNE DZIECI</b><small>trening decyzyjny · szkoła / przedszkole</small></div></a>
   <nav class="site-nav" aria-label="Nawigacja główna">
-    <a href="#start">Start</a><a href="#konfigurator">Konfigurator</a><a href="#zasady-cwiczenia">Zasady</a><a href="#wiedza">Wiedza</a><a href="#poradniki">Poradniki</a><a href="#informacje">O projekcie</a>
+    <a href="#start">Start</a><a href="#konfigurator">Konfigurator</a><a href="#zasady-cwiczenia">Zasady</a><a href="#wiedza">Wiedza</a><a class="kids-nav" href="gra-edukacyjna-bezpieczenstwo-dzieci.html" title="Gra edukacyjna dla dzieci o bezpieczeństwie: sygnały alarmowe, Alert RCB, blackout i 112">Gra dla dzieci</a><a href="#poradniki">Poradniki</a><a href="#informacje">O projekcie</a>
   </nav>
   <div class="top-actions"><span class="chip red status-chip"><span class="dot"></span>ĆWICZENIE · NIE ALARM</span><a class="btn nav-cta" href="#konfigurator">Rozpocznij ćwiczenie →</a><button id="restartTop" class="btn ghost small hidden">↻ Nowa rozgrywka</button></div>
 </div></header>
@@ -386,7 +398,19 @@ body{background:radial-gradient(circle at 18% -10%,#123e4d 0,transparent 33%),ra
     <div class="spec"><span class="spec-icon">▱</span><div><b>5 układów budynku</b><span>różne kondygnacje i rozmieszczenie</span></div></div>
     <div class="spec"><span class="spec-icon">⚙</span><div><b>Własne dane</b><span>liczba dzieci, miejsca i nazwy grup</span></div></div>
   </div>
-</div><div class="panel pad rules-panel" id="zasady-cwiczenia"><div class="eyebrow">Zasady ćwiczenia</div><h2 style="margin:8px 0 12px">Nie ma automatycznej „dobrej odpowiedzi” dla każdego budynku</h2><ul class="intro-notes"><li>Na początku ogranicz ekspozycję przy oknach i sprawdzaj oficjalne informacje.</li><li>Jeżeli placówka ma formalnie potwierdzoną formę ochrony, nie przekraczaj jej potwierdzonej pojemności. Pozostałe grupy kieruj do wcześniej rozpoznanych miejsc wewnętrznych.</li><li>Gdy role były wcześniej wyznaczone, uruchom sprawdzoną łączność zastępczą. Bez wcześniejszego planu najpierw ustal minimalny podział obowiązków z dostępnymi pracownikami — nie zakładaj, że istnieją koordynatorzy pięter.</li><li>Po awarii lub uszkodzeniu plan może wymagać ponownego przydzielenia dzieci.</li></ul><div class="notice" style="margin-top:14px">Plan budynku, pojemności pomieszczeń zastępczych i porównawcze oceny osłony są fikcyjne. Nie są instrukcją budowlaną ani oceną odporności.</div><div class="public-note"><b>Projekt edukacyjny i szkoleniowy.</b> Możesz bezpłatnie korzystać z symulatora podczas zajęć, narad i szkoleń oraz udostępniać link do strony. Narzędzie nie jest oficjalnym systemem alarmowym ani instrukcją dla konkretnego budynku.</div></div></div>
+</div>
+<section class="kids-promo" aria-labelledby="kids-game-title">
+  <div class="kids-promo-copy">
+    <div class="kids-promo-kicker">★ NOWOŚĆ · DLA DZIECI I MŁODZIEŻY</div>
+    <h2 id="kids-game-title"><span>Misja: Bezpieczni</span> — gra edukacyjna dla dzieci o bezpieczeństwie</h2>
+    <p>Krótki trening przez zabawę: dziecko uczy się rozpoznawać <strong>sygnały alarmowe</strong>, reagować na <strong>Alert RCB</strong>, zachować się podczas alarmu w szkole, przygotować <strong>plecak ewakuacyjny</strong>, poradzić sobie podczas <strong>blackoutu</strong> i właściwie korzystać z numeru <strong>112</strong>. Trzy wersje dla wieku 7–10, 11–14 i 15–18 lat.</p>
+    <div class="kids-keywords" aria-label="Tematy gry"><span>sygnały alarmowe</span><span>Alert RCB</span><span>bezpieczeństwo w szkole</span><span>plecak ewakuacyjny</span><span>blackout</span><span>numer 112</span></div>
+    <a class="kids-cta" href="gra-edukacyjna-bezpieczenstwo-dzieci.html" aria-label="Uruchom grę edukacyjną dla dzieci Misja Bezpieczni">Zagraj w „Misja: Bezpieczni” →</a>
+    <p class="kids-privacy">Bez logowania · bez imienia i nazwiska · bez formularzy osobowych · wynik nie jest wysyłany na serwer.</p>
+  </div>
+  <div class="kids-promo-visual" aria-hidden="true"><div class="kids-orbit"><i>🚨</i><i>📱</i><i>🎒</i><i>🔦</i></div><div class="kids-shield"></div></div>
+</section>
+<div class="panel pad rules-panel" id="zasady-cwiczenia"><div class="eyebrow">Zasady ćwiczenia</div><h2 style="margin:8px 0 12px">Nie ma automatycznej „dobrej odpowiedzi” dla każdego budynku</h2><ul class="intro-notes"><li>Na początku ogranicz ekspozycję przy oknach i sprawdzaj oficjalne informacje.</li><li>Jeżeli placówka ma formalnie potwierdzoną formę ochrony, nie przekraczaj jej potwierdzonej pojemności. Pozostałe grupy kieruj do wcześniej rozpoznanych miejsc wewnętrznych.</li><li>Gdy role były wcześniej wyznaczone, uruchom sprawdzoną łączność zastępczą. Bez wcześniejszego planu najpierw ustal minimalny podział obowiązków z dostępnymi pracownikami — nie zakładaj, że istnieją koordynatorzy pięter.</li><li>Po awarii lub uszkodzeniu plan może wymagać ponownego przydzielenia dzieci.</li></ul><div class="notice" style="margin-top:14px">Plan budynku, pojemności pomieszczeń zastępczych i porównawcze oceny osłony są fikcyjne. Nie są instrukcją budowlaną ani oceną odporności.</div><div class="public-note"><b>Projekt edukacyjny i szkoleniowy.</b> Możesz bezpłatnie korzystać z symulatora podczas zajęć, narad i szkoleń oraz udostępniać link do strony. Narzędzie nie jest oficjalnym systemem alarmowym ani instrukcją dla konkretnego budynku.</div></div></div>
  <div class="panel pad setup" id="konfigurator"><div class="setup-heading"><div><div class="eyebrow">Konfigurator ćwiczenia</div><h2>Ustaw parametry placówki</h2><p>Dopasuj model do swojej szkoły albo przedszkola. Merytoryka i wszystkie warianty ćwiczenia pozostają bez zmian.</p></div><div class="setup-badge"><span>01</span><b>DANE PLACÓWKI</b></div></div>
  <div class="field"><label>Typ placówki</label><p class="help">Wybierz wariant. Zmienia nazwy grup i modelową wielkość grup startowych.</p><div class="choiceset" data-select="facility"></div><div id="facilityInfo" class="footnote" style="margin-top:8px"></div></div>
  <div class="field"><label>Układ budynku placówki</label><p class="help">Wybierz kondygnacje, które rzeczywiście ma budynek. Ten wybór określi później dostępne poziomy podczas rozmieszczania dzieci.</p><div class="choiceset" data-select="profile"></div><div id="profileInfo" class="footnote" style="margin-top:8px"></div><div id="profileVisual" class="school-visual" aria-label="Wizualizacja układu budynku"></div></div><div class="field"><label for="studentCountInput">Liczba dzieci w placówce — wpisz samodzielnie</label><input id="studentCountInput" class="textinput" type="number" min="20" max="2000" step="1" inputmode="numeric" required aria-describedby="studentCountHelp"><p id="studentCountHelp" class="help" style="margin-top:7px">20–2000 dzieci. Rozdział na grupy jest poglądowy; liczba pracowników pozostaje założeniem wybranego modelu. Zmiana liczby dzieci nie powiększa pomieszczeń.</p></div>
@@ -515,7 +539,7 @@ body{background:radial-gradient(circle at 18% -10%,#123e4d 0,transparent 33%),ra
       <a href="#zasady">Zasady korzystania</a>
       <a href="#prywatnosc">Prywatność</a>
       <a href="#zrodla-info">Źródła i odpowiedzialność</a>
-      <a href="#poradniki">Poradniki</a>
+      <a href="gra-edukacyjna-bezpieczenstwo-dzieci.html">Gra edukacyjna dla dzieci</a><a href="#poradniki">Poradniki</a>
     </div>
   </div>
 
