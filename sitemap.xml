@@ -1,9 +1,39 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://bezpiecznedzieci.com/</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://bezpiecznedzieci.com/procedura-atak-z-powietrza-szkola.html</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://bezpiecznedzieci.com/sygnaly-alarmowe-szkola.html</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://bezpiecznedzieci.com/miejsce-schronienia-w-szkole.html</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://bezpiecznedzieci.com/rodzice-alarm-w-szkole.html</loc><lastmod>2026-10-02</lastmod></url>
-  <url><loc>https://bezpiecznedzieci.com/punkt-schronienia-a-miejsce-schronienia.html</loc><lastmod>2026-10-02</lastmod></url>
+  <url>
+    <loc>https://bezpiecznedzieci.com/</loc>
+    <lastmod>2026-10-08</lastmod>
+  </url>
+  <url>
+    <loc>https://bezpiecznedzieci.com/procedura-atak-z-powietrza-szkola.html</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://bezpiecznedzieci.com/sygnaly-alarmowe-szkola.html</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://bezpiecznedzieci.com/miejsce-schronienia-w-szkole.html</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://bezpiecznedzieci.com/rodzice-alarm-w-szkole.html</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://bezpiecznedzieci.com/punkt-schronienia-a-miejsce-schronienia.html</loc>
+    <lastmod>2026-10-02</lastmod>
+  </url>
+  <url>
+    <loc>https://bezpiecznedzieci.com/gra-edukacyjna-bezpieczenstwo-dzieci.html</loc>
+    <lastmod>2026-10-03</lastmod>
+  </url>
+  <url>
+    <loc>https://bezpiecznedzieci.com/atak-nozownika-w-szkole.html</loc>
+    <lastmod>2026-10-08</lastmod>
+  </url>
+  <url>
+    <loc>https://bezpiecznedzieci.com/generator-rodzinnego-planu-bezpieczenstwa.html</loc>
+    <lastmod>2026-10-08</lastmod>
+  </url>
 </urlset>
