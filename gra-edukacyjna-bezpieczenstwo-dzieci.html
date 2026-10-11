@@ -9,7 +9,7 @@
 <meta name="author" content="Marcin Pietkiewicz">
 <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="canonical" href="https://bezpiecznedzieci.com/gra-edukacyjna-bezpieczenstwo-dzieci.html">
-<link rel="icon" type="image/png" sizes="512x512" href="/favicon.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://bezpiecznedzieci.com/favicon.png">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Bezpieczne Dzieci">
@@ -91,11 +91,11 @@ button,a{font:inherit}button{cursor:pointer}.hidden{display:none!important}butto
 <body>
 <header class="topbar">
   <div class="wrap topbar-in">
-    <a class="brand" href="/" aria-label="Bezpieczne Dzieci — strona główna">
+    <a class="brand" href="index.html" aria-label="Bezpieczne Dzieci — strona główna">
       <div class="brand-mark">BD</div>
       <div class="brand-txt"><b>BEZPIECZNE DZIECI</b><small>gra edukacyjna · dzieci / młodzież</small></div>
     </a>
-    <div class="top-actions"><span class="pill"><i class="dot"></i>EDUKACJA · NIE ALARM</span><a class="back" href="/">← Wróć do serwisu</a></div>
+    <div class="top-actions"><span class="pill"><i class="dot"></i>EDUKACJA · NIE ALARM</span><a class="back" href="index.html">← Wróć do serwisu</a></div>
   </div>
 </header>
 <main>
@@ -179,7 +179,7 @@ button,a{font:inherit}button{cursor:pointer}.hidden{display:none!important}butto
       <div class="result-crest">✓</div><h2 id="resultTitle">Misja wykonana!</h2><p class="lead" id="resultLead"></p><div class="result-score">★ <span id="finalScore">0</span> / 80 pkt</div>
       <div class="badge-row"><span class="award">🛡️ znam alarm</span><span class="award">📱 sprawdzam komunikaty</span><span class="award">🎒 potrafię się przygotować</span></div>
       <div class="family-card"><b>MISJA DLA CAŁEJ RODZINY</b><p id="familyMission"></p></div>
-      <div class="result-actions"><button class="primary" id="restartBtn" type="button">Zagraj jeszcze raz</button><a class="secondary" href="/" style="text-decoration:none;display:inline-flex;align-items:center">Wróć do BezpieczneDzieci.com</a></div>
+      <div class="result-actions"><button class="primary" id="restartBtn" type="button">Zagraj jeszcze raz</button><a class="secondary" href="index.html" style="text-decoration:none;display:inline-flex;align-items:center">Wróć do BezpieczneDzieci.com</a></div>
     </div>
   </div>
   <div class="info-grid">
@@ -265,7 +265,15 @@ function playSignal(kind){stopAudio();const AC=window.AudioContext||window.webki
 $('#audioBtn').addEventListener('click',()=>{if(audioStop)stopAudio();else playSignal(content[age][index].audio||'alarm')});
 function setScene(m){$('#sceneArt').innerHTML=scenes[m.scene]||'';$('#sceneMessage').textContent=m.msg;$('#audioBox').classList.toggle('hidden',!m.audio);stopAudio()}
 function showFeedback(good,m){$('#feedbackTitle').textContent=good?'✓ Dobra decyzja':'Sprawdź lepsze rozwiązanie';$('#feedbackTitle').style.color=good?'var(--mint)':'var(--amber)';$('#feedbackText').textContent=m.why;$('#fact').textContent='Zapamiętaj: '+m.fact;$('#feedback').classList.remove('hidden');$('#nextBtn').focus()}
-function renderChoice(m){const area=$('#answerArea');area.innerHTML='<div class="answers"></div>';const box=area.firstElementChild;m.a.forEach((t,j)=>{const b=document.createElement('button');b.type='button';b.className='answer';b.innerHTML=`<span class="letter">${String.fromCharCode(65+j)}</span><span>${t}</span>`;b.addEventListener('click',()=>{if(locked)return;locked=true;const good=j===m.ok;if(good)score+=10;[...box.children].forEach((x,k)=>{x.disabled=true;if(k===m.ok)x.classList.add('good','reveal');else if(k===j)x.classList.add('bad')});$('#score').textContent=score;showFeedback(good,m)});box.appendChild(b)})}
+function choiceDisplayOrder(m){
+ const items=m.a.map((text,originalIndex)=>({text,originalIndex}));
+ const correct=items.splice(m.ok,1)[0];
+ const ageOffset={young:0,mid:1,teen:2}[age]||0;
+ const target=(index+ageOffset)%m.a.length;
+ items.splice(target,0,correct);
+ return items;
+}
+function renderChoice(m){const area=$('#answerArea');area.innerHTML='<div class="answers"></div>';const box=area.firstElementChild;const shown=choiceDisplayOrder(m);shown.forEach((item,j)=>{const b=document.createElement('button');b.type='button';b.className='answer';b.dataset.originalIndex=String(item.originalIndex);b.innerHTML=`<span class="letter">${String.fromCharCode(65+j)}</span><span>${item.text}</span>`;b.addEventListener('click',()=>{if(locked)return;locked=true;const good=item.originalIndex===m.ok;if(good)score+=10;[...box.children].forEach(x=>{x.disabled=true;const originalIndex=Number(x.dataset.originalIndex);if(originalIndex===m.ok)x.classList.add('good','reveal');else if(originalIndex===item.originalIndex)x.classList.add('bad')});$('#score').textContent=score;showFeedback(good,m)});box.appendChild(b)})}
 function renderRooms(m){const area=$('#answerArea');area.innerHTML='<div class="room-grid"></div>';const box=area.firstElementChild;roomChoices.forEach(r=>{const b=document.createElement('button');b.type='button';b.className='room-btn';b.innerHTML=`<div class="room-art">${r.svg}</div><div><strong>${r.title}</strong><small>${r.sub}</small></div>`;b.addEventListener('click',()=>{if(locked)return;locked=true;const good=r.id===m.ok;if(good)score+=10;[...box.children].forEach((x,k)=>{x.disabled=true;if(roomChoices[k].id===m.ok)x.classList.add('good');else if(k===roomChoices.indexOf(r))x.classList.add('bad')});$('#score').textContent=score;showFeedback(good,m)});box.appendChild(b)})}
 function renderMulti(m){const area=$('#answerArea');area.innerHTML='<div class="multi-grid"></div><button class="secondary multi-submit" type="button">Zatwierdź wybór</button><div class="multi-status"></div>';const box=area.querySelector('.multi-grid'),status=area.querySelector('.multi-status'),submit=area.querySelector('.multi-submit');let selected=new Set();m.items.forEach(it=>{const [id,ico,title,sub]=it;const b=document.createElement('button');b.type='button';b.className='item-btn';b.dataset.id=id;b.innerHTML=`<span class="ico">${ico}</span><span><strong>${title}</strong><small>${sub}</small></span>`;b.addEventListener('click',()=>{if(locked)return;if(selected.has(id))selected.delete(id);else if(selected.size<m.need)selected.add(id);b.classList.toggle('selected',selected.has(id));status.textContent=`Wybrano ${selected.size} / ${m.need}`});box.appendChild(b)});status.textContent=`Wybrano 0 / ${m.need}`;submit.addEventListener('click',()=>{if(locked)return;if(selected.size!==m.need){status.textContent=`Wybierz dokładnie ${m.need} elementów.`;return}locked=true;const truth=new Set(m.items.filter(x=>x[4]===1).map(x=>x[0]));let correct=0;selected.forEach(x=>{if(truth.has(x))correct++});const good=correct===m.need;if(good)score+=10;[...box.children].forEach((b,j)=>{b.disabled=true;const id=m.items[j][0];if(truth.has(id))b.style.borderColor='#4baf8f';if(selected.has(id)&&!truth.has(id))b.style.borderColor='#bd6868'});submit.disabled=true;$('#score').textContent=score;showFeedback(good,m)})}
 function render(){locked=false;$('#feedback').classList.add('hidden');$('#missionNo').textContent=index+1;$('#score').textContent=score;updateRoute();const m=content[age][index];$('#missionKicker').textContent=m.k;$('#question').textContent=m.q;$('#context').textContent=m.c;setScene(m);if(m.type==='choice')renderChoice(m);else if(m.type==='rooms')renderRooms(m);else renderMulti(m);$('#nextBtn').textContent=index===7?'Zobacz wynik →':'Następna misja →'}

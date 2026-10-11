@@ -9,7 +9,7 @@
 <meta content="Marcin Pietkiewicz" name="author"/>
 <meta content="index,follow,max-image-preview:large,max-snippet:-1" name="robots"/>
 <link href="https://bezpiecznedzieci.com/atak-nozownika-w-szkole.html" rel="canonical"/>
-<link href="favicon-atak-nozownika.svg" rel="icon" type="image/svg+xml"/>
+<link href="https://bezpiecznedzieci.com/favicon-atak-nozownika.svg" rel="icon" type="image/svg+xml"/>
 <meta content="article" property="og:type"/>
 <meta content="pl_PL" property="og:locale"/>
 <meta content="Bezpieczne Dzieci" property="og:site_name"/>
@@ -226,9 +226,17 @@ const exerciseData={
 };
 let role='child',index=0,score=0,locked=false;
 const roleButtons=[...document.querySelectorAll('[data-role]')],optionsBox=$('#choices'),next=$('#next-question'),feedback=$('#feedback');
+function knifeDisplayOrder(q){
+ const items=q.options.map((label,originalIndex)=>({label,originalIndex}));
+ const correct=items.splice(q.correct,1)[0];
+ const roleOffset={child:0,student:1,staff:2}[role]||0;
+ const target=(index+roleOffset)%q.options.length;
+ items.splice(target,0,correct);
+ return items;
+}
 function render(){const a=exerciseData[role],q=a.questions[index];$('#question-panel').hidden=false;$('#final-panel').style.display='none';$('#role-caption').textContent=a.name;$('#progress-caption').textContent='Sytuacja '+(index+1)+' z '+a.questions.length;$('#progress-fill').style.width=((index)/a.questions.length*100)+'%';$('#question-title').textContent=q.title;$('#question-text').textContent=q.text;optionsBox.replaceChildren();feedback.textContent='';feedback.className='feedback';next.hidden=true;locked=false;
-  q.options.forEach((label,i)=>{const btn=document.createElement('button');btn.type='button';btn.className='choice';btn.textContent=label;btn.addEventListener('click',()=>choose(i));optionsBox.appendChild(btn)})}
-function choose(i){if(locked)return;locked=true;const q=exerciseData[role].questions[index],good=i===q.correct;if(good)score++;[...optionsBox.children].forEach((b,k)=>{b.disabled=true;if(k===q.correct)b.classList.add('correct');if(k===i)b.classList.add('selected')});feedback.className='feedback visible '+(good?'good':'needs');const head=document.createElement('strong');head.textContent=good?'To bezpieczny wybór w tym scenariuszu.':'W tej sytuacji bezpieczniejsza jest inna decyzja.';const p=document.createElement('p');p.textContent=q.explain;feedback.replaceChildren(head,p);next.hidden=false;next.textContent=index+1===exerciseData[role].questions.length?'Zobacz podsumowanie →':'Następna sytuacja →';$('#progress-fill').style.width=((index+1)/exerciseData[role].questions.length*100)+'%'}
+  knifeDisplayOrder(q).forEach(item=>{const btn=document.createElement('button');btn.type='button';btn.className='choice';btn.dataset.originalIndex=String(item.originalIndex);btn.textContent=item.label;btn.addEventListener('click',()=>choose(item.originalIndex));optionsBox.appendChild(btn)})}
+function choose(i){if(locked)return;locked=true;const q=exerciseData[role].questions[index],good=i===q.correct;if(good)score++;[...optionsBox.children].forEach(b=>{b.disabled=true;const originalIndex=Number(b.dataset.originalIndex);if(originalIndex===q.correct)b.classList.add('correct');if(originalIndex===i)b.classList.add('selected')});feedback.className='feedback visible '+(good?'good':'needs');const head=document.createElement('strong');head.textContent=good?'To bezpieczny wybór w tym scenariuszu.':'W tej sytuacji bezpieczniejsza jest inna decyzja.';const p=document.createElement('p');p.textContent=q.explain;feedback.replaceChildren(head,p);next.hidden=false;next.textContent=index+1===exerciseData[role].questions.length?'Zobacz podsumowanie →':'Następna sytuacja →';$('#progress-fill').style.width=((index+1)/exerciseData[role].questions.length*100)+'%'}
 function done(){const total=exerciseData[role].questions.length;$('#question-panel').hidden=true;$('#final-panel').style.display='block';$('#score').textContent=score+' / '+total;$('#score-message').textContent=score===total?'Wszystkie odpowiedzi odpowiadają przyjętym w ćwiczeniu bezpiecznym decyzjom. W prawdziwej sytuacji o sposobie postępowania decydują warunki na miejscu.':'Masz za sobą '+total+' sytuacji. Wróć do wyjaśnień i spróbuj ponownie – celem jest zrozumienie zasad, a nie uzyskanie wyniku.'}
 roleButtons.forEach(btn=>btn.addEventListener('click',()=>{role=btn.dataset.role;roleButtons.forEach(x=>x.setAttribute('aria-pressed',String(x===btn)));index=0;score=0;render()}));
 next.addEventListener('click',()=>{if(!locked)return;if(index+1===exerciseData[role].questions.length){done();return}index++;render()});$('#retry').addEventListener('click',()=>{index=0;score=0;render()});$('#printBtn').addEventListener('click',()=>window.print());render();

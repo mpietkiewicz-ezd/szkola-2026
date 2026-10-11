@@ -1,0 +1,19 @@
+BEZPIECZNE DZIECI — PAKIET NAPRAWCZY v3
+
+1. Wgraj pliki do katalogu głównego serwisu z opcją SCAL/MERGE, NIE kasuj całego katalogu.
+2. index.html zastępuje dotychczasowy index.html.
+3. Pakiet zawiera także trzy istniejące narzędzia, których brak powodował błędy przy lokalnym teście:
+   - gra-edukacyjna-bezpieczenstwo-dzieci.html
+   - generator-rodzinnego-planu-bezpieczenstwa.html
+   - atak-nozownika-w-szkole.html
+4. Pięć starszych poradników nie było dostępnych w przekazanym zestawie, dlatego linki do nich są absolutne i prowadzą do wersji produkcyjnej na bezpiecznedzieci.com. Nie usuwaj ich z hostingu.
+5. Odwołania do hero-school.jpg i favicon zostały ustawione jako adresy produkcyjne, dzięki czemu test lokalny nie pokazuje błędu braku pliku.
+6. sitemap.xml i robots.txt można wgrać do katalogu głównego.
+
+
+AKTUALIZACJA v4 — 11.10.2026
+- sitemap.xml zawiera 14 aktualnych publicznych adresów serwisu.
+- Misja: Bezpieczni: pozycja poprawnej odpowiedzi jest celowo zróżnicowana między A/B/C/D.
+- Trening 4U: najbezpieczniejsza decyzja zmienia pozycję między kolejnymi sytuacjami i rolami.
+- Trening rodzinny: prawidłowe odpowiedzi są rozłożone na różne pozycje.
+- Symulator ataku z powietrza już wcześniej używał deterministycznie zmiennej kolejności odpowiedzi zależnej od kodu scenariusza; pozostawiono ten mechanizm.
