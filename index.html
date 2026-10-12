@@ -4,7 +4,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#06121c">
 <title>Bezpieczne Dzieci – treningi i procedury dla szkół i rodzin</title>
-<meta name="description" content="Bezpłatne treningi bezpieczeństwa dla szkół i rodzin. Symulator ataku z powietrza, procedury reagowania, gra edukacyjna i generator rodzinnego planu.">
+<meta name="description" content="Bezpieczne Dzieci: bezpłatne gry i symulatory dla szkół i rodzin. Numer 112, pożar, bezpieczny internet, alarmy, ewakuacja i plan rodzinny.">
 <meta name="author" content="Marcin Pietkiewicz">
 <meta name="application-name" content="Bezpieczne Dzieci">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -15,7 +15,7 @@
 <meta property="og:locale" content="pl_PL">
 <meta property="og:site_name" content="Bezpieczne Dzieci">
 <meta property="og:title" content="Bezpieczne Dzieci – treningi i procedury dla szkół i rodzin">
-<meta property="og:description" content="Ćwicz bezpieczne decyzje: symulator ataku z powietrza w szkole, gra dla dzieci, plan rodzinny, trening reagowania na napastnika i poradniki.">
+<meta property="og:description" content="Gry dla dzieci i treningi dla szkół: numer 112, pożar, bezpieczny internet, powódź, alarmy i plan rodzinny. Darmowe ćwiczenia i poradniki.">
 <meta property="og:url" content="https://bezpiecznedzieci.com/">
 <meta property="og:image" content="https://bezpiecznedzieci.com/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -70,7 +70,7 @@
           "name": "ochrona ludności"
         }
       ],
-      "dateModified": "2026-10-08",
+      "dateModified": "2026-10-12",
       "inLanguage": "pl-PL",
       "author": {
         "@id": "https://marcin-pietkiewicz.pl/#person"
@@ -187,6 +187,48 @@
           "position": 14,
           "name": "Alarm podczas WF-u lub na boisku",
           "url": "https://bezpiecznedzieci.com/alarm-na-boisku-wf.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 15,
+          "name": "Treningi bezpieczeństwa dla dzieci",
+          "url": "https://bezpiecznedzieci.com/treningi-bezpieczenstwa-dla-dzieci.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 16,
+          "name": "Bezpieczny internet – gra edukacyjna",
+          "url": "https://bezpiecznedzieci.com/bezpieczny-internet-gra.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 17,
+          "name": "Numer alarmowy 112 – gra edukacyjna",
+          "url": "https://bezpiecznedzieci.com/numer-112-gra-dla-dzieci.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 18,
+          "name": "Pożar w szkole i domu – gra edukacyjna",
+          "url": "https://bezpiecznedzieci.com/pozar-w-szkole-i-domu-gra.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 19,
+          "name": "Przemoc rówieśnicza – gra edukacyjna",
+          "url": "https://bezpiecznedzieci.com/przemoc-rowiesnicza-gra.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 20,
+          "name": "Zgubiłem się – gra edukacyjna",
+          "url": "https://bezpiecznedzieci.com/zgubilem-sie-co-robic-gra.html"
+        },
+        {
+          "@type": "ListItem",
+          "position": 21,
+          "name": "Powódź i podtopienia – gra edukacyjna",
+          "url": "https://bezpiecznedzieci.com/powodz-bezpieczne-decyzje-gra.html"
         }
       ]
     }
@@ -572,11 +614,19 @@ body{background:radial-gradient(circle at 18% -10%,#123e4d 0,transparent 33%),ra
 .guide-card.trip-guide .guide-no,.guide-card.trip-guide strong{color:#8fd1ff}
 .guide-card.sport-guide{border-color:#6b5b9b;background:linear-gradient(155deg,#241d45,#171629)}
 .guide-card.sport-guide .guide-no,.guide-card.sport-guide strong{color:#c1adff}
+
+/* Nowa strefa gier – Bezpieczne Dzieci: sześć kolorów, jeden język graficzny */
+.bd-learning-zone{scroll-margin-top:100px;margin:34px 0;padding:clamp(18px,3vw,32px);background:linear-gradient(145deg,#0d2433,#0b1b2a);border:1px solid #375a70;border-radius:18px}
+.bd-learning-intro{max-width:990px}.bd-learning-intro h2{font-size:clamp(23px,3vw,36px);line-height:1.18;letter-spacing:-.025em;margin:12px 0}.bd-learning-intro p{font-size:15px;line-height:1.72;color:#d7e8f1}.bd-learning-all{display:inline-block;margin:8px 0 24px;padding:10px 13px;border:1px solid #73dcca;background:#153b3d;color:#c6fff1!important;border-radius:10px;text-decoration:none;font-weight:800;font-size:13px}.bd-learning-all:hover{background:#1c4a4e}
+.bd-learning-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px}
+.bd-learning-card{border:1px solid var(--tile-accent);border-radius:14px;background:linear-gradient(140deg,var(--tile-background),#0b1d2d 72%);padding:20px;display:flex;flex-direction:column;gap:11px;text-decoration:none;color:#f0f8ff;min-height:226px;box-shadow:inset 0 4px 0 var(--tile-accent);transition:transform .15s,border-color .15s}
+.bd-learning-card:hover{transform:translateY(-3px);background:linear-gradient(140deg,var(--tile-background),#15334a)}.bd-learning-type{font-size:10px;font-weight:850;text-transform:uppercase;letter-spacing:.08em;color:#f2f5fa}.bd-learning-card strong{font-size:22px;line-height:1.16;color:#fff}.bd-learning-description{line-height:1.5;color:#cedeea;font-size:13px}.bd-learning-cta{margin-top:auto;color:var(--tile-accent);font-size:13px;font-weight:900}.bd-learning-disclaimer{font-size:12px;color:#b7cad7;margin:19px 0 0}
+@media(max-width:1050px){.bd-learning-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:650px){.bd-learning-grid{grid-template-columns:1fr}.bd-learning-zone{padding:16px}.bd-learning-card{min-height:184px}.bd-learning-card strong{font-size:20px}}@media(prefers-reduced-motion:reduce){.bd-learning-card{transition:none}.bd-learning-card:hover{transform:none}}
 </style></head><body>
 <header class="top"><div class="container top-shell">
   <a class="brand" href="index.html" aria-label="Bezpieczne Dzieci — strona główna"><div class="logo"><span>BD</span></div><div><b>BEZPIECZNE DZIECI</b><small>bezpieczeństwo szkoły i rodziny</small></div></a>
   <nav class="site-nav" aria-label="Nawigacja główna">
-    <a href="#centrum">Start</a><a href="#start">Symulator</a><a href="generator-rodzinnego-planu-bezpieczenstwa.html">Plan rodzinny</a><a class="kids-nav" href="gra-edukacyjna-bezpieczenstwo-dzieci.html">Gra dla dzieci</a><a class="knife-nav" href="atak-nozownika-w-szkole.html">Atak nożownika</a><a href="#poradniki">Poradniki</a>
+    <a href="#centrum">Start</a><a href="#start">Symulator</a><a href="generator-rodzinnego-planu-bezpieczenstwa.html">Plan rodzinny</a><a class="kids-nav" href="gra-edukacyjna-bezpieczenstwo-dzieci.html">Gra dla dzieci</a><a class="knife-nav" href="atak-nozownika-w-szkole.html">Atak nożownika</a><a href="treningi-bezpieczenstwa-dla-dzieci.html">6 gier</a><a href="#poradniki">Poradniki</a>
   </nav>
   <div class="top-actions"><span class="chip red status-chip"><span class="dot"></span>ĆWICZENIE · NIE ALARM</span><a class="btn nav-cta" href="#konfigurator">Rozpocznij ćwiczenie →</a><button id="restartTop" class="btn ghost small hidden">↻ Nowa rozgrywka</button></div>
 </div></header>
@@ -755,6 +805,16 @@ body{background:radial-gradient(circle at 18% -10%,#123e4d 0,transparent 33%),ra
 </section>
 
 
+<section class="bd-learning-zone" id="gry-bezpieczenstwa" aria-labelledby="bd-learning-title">
+ <div class="bd-learning-intro"><div class="eyebrow">NOWA STREFA DLA DZIECI I RODZICÓW · 6 DARMOWYCH GIER</div><h2 id="bd-learning-title">Gry o bezpieczeństwie dla dzieci. Podejmij decyzję i poznaj jej konsekwencje</h2><p>Pożar, wezwanie pomocy, zagrożenia w internecie czy zgubienie się w tłumie — tego można uczyć spokojnie, bez straszenia. Każdy z sześciu treningów to autorskie sytuacje z wyjaśnieniem, co pomaga, a czego lepiej unikać. <strong>Przy każdym uruchomieniu zmienia się kolejność pytań i odpowiedzi.</strong></p><a class="bd-learning-all" href="treningi-bezpieczenstwa-dla-dzieci.html">Zobacz wszystkie gry i wskazówki dla nauczycieli →</a></div>
+ <div class="bd-learning-grid">
+ <a class="bd-learning-card" href="bezpieczny-internet-gra.html" style="--tile-accent:#b68bff;--tile-background:#241b42"><span class="bd-learning-type">Bezpieczeństwo cyfrowe · 10–15 lat</span><strong>Bezpieczny internet</strong><span class="bd-learning-description">Oszustwa, wiadomości od znajomych, deepfake i dane osobowe.</span><span class="bd-learning-cta">Uruchom grę <span aria-hidden="true">→</span></span></a>
+ <a class="bd-learning-card" href="numer-112-gra-dla-dzieci.html" style="--tile-accent:#72ebbc;--tile-background:#123c32"><span class="bd-learning-type">Pomoc w zagrożeniu · 7–14 lat</span><strong>Numer alarmowy 112</strong><span class="bd-learning-description">Rozmowa z operatorem, przekazywanie miejsca i ocena pilności.</span><span class="bd-learning-cta">Uruchom grę <span aria-hidden="true">→</span></span></a>
+ <a class="bd-learning-card" href="pozar-w-szkole-i-domu-gra.html" style="--tile-accent:#ffc17a;--tile-background:#402b18"><span class="bd-learning-type">Pożar i ewakuacja · 8–15 lat</span><strong>Pożar w szkole i domu</strong><span class="bd-learning-description">Ewakuacja, zadymienie i decyzje w szkole oraz w domu.</span><span class="bd-learning-cta">Uruchom grę <span aria-hidden="true">→</span></span></a>
+ <a class="bd-learning-card" href="przemoc-rowiesnicza-gra.html" style="--tile-accent:#ff91aa;--tile-background:#411d2a"><span class="bd-learning-type">Relacje i bezpieczeństwo · 9–15 lat</span><strong>Przemoc rówieśnicza</strong><span class="bd-learning-description">Hejt, wykluczanie, zgłaszanie przemocy i pomoc kolegom.</span><span class="bd-learning-cta">Uruchom grę <span aria-hidden="true">→</span></span></a>
+ <a class="bd-learning-card" href="zgubilem-sie-co-robic-gra.html" style="--tile-accent:#ffe083;--tile-background:#3a2d12"><span class="bd-learning-type">Bezpieczeństwo najmłodszych · 6–10 lat</span><strong>Zgubiłem się</strong><span class="bd-learning-description">Zgubienie się na zakupach lub wydarzeniu, szukanie pomocy.</span><span class="bd-learning-cta">Uruchom grę <span aria-hidden="true">→</span></span></a>
+ <a class="bd-learning-card" href="powodz-bezpieczne-decyzje-gra.html" style="--tile-accent:#7ed7ff;--tile-background:#153a52"><span class="bd-learning-type">Pogoda i zagrożenia · 9–15 lat</span><strong>Powódź i podtopienia</strong><span class="bd-learning-description">Zalane drogi, ostrzeżenia, wezbrana woda i ewakuacja.</span><span class="bd-learning-cta">Uruchom grę <span aria-hidden="true">→</span></span></a>
+ </div><p class="bd-learning-disclaimer">Niezależny projekt edukacyjny. Gry nie zastępują poleceń służb, szkolnych procedur ani rozmowy z opiekunem.</p></section>
 <section class="portal-context" aria-labelledby="portal-context-title" id="sciezki-bezpieczenstwa">
  <div class="portal-context-label">JAK KORZYSTAĆ Z BAZY WIEDZY</div>
  <h2 id="portal-context-title">Bezpieczeństwo dzieci w szkole i w domu – od czego zacząć?</h2>

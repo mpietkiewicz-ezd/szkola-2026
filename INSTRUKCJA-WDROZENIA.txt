@@ -1,0 +1,32 @@
+WDROŻENIE: BEZPIECZNE DZIECI — WERSJA SEO / LOSOWANIE A-B-C
+Data: 12.10.2026
+
+ZAWARTOŚĆ: index.html (dopasowany do przesłanego pliku index (11).html), 7 nowych podstron HTML, sitemap.xml.
+
+1. ZRÓB KOPIĘ aktualnego index.html i sitemap.xml na serwerze.
+2. Wgraj index.html oraz siedem nowych plików .html do katalogu głównego domeny bezpiecznedzieci.com.
+3. Wgraj nową sitemap.xml do katalogu głównego jako /sitemap.xml.
+4. Nie usuwaj starych podstron i plików graficznych: index nadal z nich korzysta.
+5. Sprawdź, czy wszystkie adresy w sitemap odpowiadają rzeczywistym podstronom HTTP 200. Część starych URL-i pochodzi z przesłanego index.html, ale nie mogłem sprawdzić ich statusów na serwerze.
+6. Jeśli w robots.txt brak odnośnika do mapy, dodaj: Sitemap: https://bezpiecznedzieci.com/sitemap.xml (nie nadpisuj innych reguł).
+7. Zgłoś ponownie sitemap.xml w Google Search Console. Indeksacja i ranking nie są gwarantowane.
+8. Sprawdź na telefonie grę od początku do końca, warianty poprawnej litery i czytelność.
+
+UWAGI O LOSOWANIU
+- 6 pytań: dokładnie 2 poprawne na A, 2 na B i 2 na C w każdej nowej rozgrywce.
+- Losowa jest kolejność pytań i odpowiedzi; każde ponowne uruchomienie przelicza kolejność.
+- Losowanie z crypto.getRandomValues z awaryjnym Math.random. Wyniki przechowywane tylko podczas bieżącej sesji przeglądarki, bez przesyłania.
+
+SEO
+- Unikalne title, description, H1, uzupełnione sekcje tematyczne i FAQ widoczne bez JavaScript.
+- BreadcrumbList i LearningResource (JSON-LD), poprawny canonical, wewnętrzne linki kontekstowe, sitemap.xml z wiarygodnym lastmod.
+- FAQ to zwykła treść dla użytkownika; brak obietnicy wyświetlania rozszerzonych wyników Google.
+- Pamiętaj o testach Search Console, indeksacji i dalszym rozbudowywaniu przydatnej treści.
+
+PRAWA AUTORSKIE
+- Tematy odpowiadają powszechnym potrzebom edukacyjnym, a opisy i scenariusze są autorskie. Nie kopiowano materiałów MEN.
+- Do poradników MEN prowadzi informacyjny odsyłacz, bez sugerowania zatwierdzenia lub współpracy.
+
+WYKAZ ADRESÓW W NOWEJ SITEMAP: 21 (łącznie ze stroną główną; nowe podstrony 7).
+
+Pliki przygotowano w oparciu o dostarczoną wersję strony głównej; nie modyfikowano kodu symulatora.
