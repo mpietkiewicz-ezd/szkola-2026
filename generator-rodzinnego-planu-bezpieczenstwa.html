@@ -18,7 +18,7 @@
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Generator rodzinnego planu bezpieczeństwa"><meta name="twitter:description" content="Wspólnie ustalcie plan na sytuację kryzysową. Zróbcie krótki trening i wydrukujcie ustalenia."><meta name="twitter:image" content="https://bezpiecznedzieci.com/og-plan-rodzinny.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-{"@type":"WebPage","@id":"https://bezpiecznedzieci.com/generator-rodzinnego-planu-bezpieczenstwa.html#webpage","url":"https://bezpiecznedzieci.com/generator-rodzinnego-planu-bezpieczenstwa.html","name":"Generator rodzinnego planu bezpieczeństwa","description":"Niezależny generator rodzinnego planu bezpieczeństwa i trening sytuacyjny.","inLanguage":"pl-PL","datePublished":"2026-10-08","dateModified":"2026-10-08","author":{"@type":"Person","name":"Marcin Pietkiewicz","url":"https://marcin-pietkiewicz.pl/"}},
+{"@type":"WebPage","@id":"https://bezpiecznedzieci.com/generator-rodzinnego-planu-bezpieczenstwa.html#webpage","url":"https://bezpiecznedzieci.com/generator-rodzinnego-planu-bezpieczenstwa.html","name":"Generator rodzinnego planu bezpieczeństwa","description":"Niezależny generator rodzinnego planu bezpieczeństwa i trening sytuacyjny.","inLanguage":"pl-PL","datePublished":"2026-10-08","dateModified":"2026-10-13","author":{"@type":"Person","name":"Marcin Pietkiewicz","url":"https://marcin-pietkiewicz.pl/"}},
 {"@type":"WebApplication","name":"Generator rodzinnego planu bezpieczeństwa","url":"https://bezpiecznedzieci.com/generator-rodzinnego-planu-bezpieczenstwa.html","applicationCategory":"EducationalApplication","operatingSystem":"Any","browserRequirements":"Przeglądarka z JavaScript","inLanguage":"pl-PL","isAccessibleForFree":true,"provider":{"@type":"Organization","name":"Bezpieczne Dzieci","url":"https://bezpiecznedzieci.com/"}},
 {"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Bezpieczne Dzieci","item":"https://bezpiecznedzieci.com/"},{"@type":"ListItem","position":2,"name":"Generator rodzinnego planu bezpieczeństwa","item":"https://bezpiecznedzieci.com/generator-rodzinnego-planu-bezpieczenstwa.html"}]}
 ]}
@@ -54,12 +54,46 @@
 @media(max-width:1100px){.learning-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:760px){.training{margin-top:22px;margin-bottom:34px}.training-grid{grid-template-columns:1fr}.learning-hub{margin-bottom:32px}.learning-grid{gap:10px}.top-links{gap:10px}.top-links a{font-size:11px}}
 @media(max-width:540px){.learning-grid{grid-template-columns:1fr}.learning-card{padding:16px}.learning-card p{margin-bottom:12px}.top-links a[href="#poradnik"]{display:none}.top-links a[href="#materialy"]{display:none}}
+
+/* Grafika kontekstowa; nie wpływa na logikę quizów ani symulatora. */
+.bd-editorial{width:100%;max-width:800px;margin:1.25rem 0 1.3rem}
+.bd-editorial svg{display:block;width:100%;height:auto;max-height:300px;border-radius:13px;box-shadow:0 7px 22px rgba(17,45,56,.10)}
+.bd-editorial figcaption{margin-top:.5rem;font-size:.76rem;line-height:1.5;color:#687885}
+@media print{.bd-editorial{break-inside:avoid}}
 </style>
 </head>
 <body>
 <header class="top"><div class="wrap top-in"><a class="brand" href="index.html" aria-label="Bezpieczne Dzieci — strona główna"><span class="mark">BD</span><span><strong>BEZPIECZNE DZIECI</strong><small>praktyczne materiały edukacyjne</small></span></a><nav class="top-links" aria-label="Skróty"><a href="#generator">Generator</a><a href="#trening">Trening</a><a href="#poradnik">Poradnik</a><a href="#materialy">Inne materiały</a><a href="index.html">Strona główna ↗</a></nav></div></header>
 <main>
-<section class="hero wrap"><div class="hero-grid"><div><span class="eyebrow">Bezpłatne narzędzie · do samodzielnego wykorzystania</span><h1>Generator <em>rodzinnego planu</em> bezpieczeństwa</h1><p>Ustalcie, jak będziecie się kontaktować, gdzie spotkacie się w razie rozdzielenia i kto pomoże dzieciom lub bliskim wymagającym wsparcia. Na końcu wydrukujcie własne ustalenia i przećwiczcie kilka sytuacji.</p><div class="hero-cta"><a class="btn" href="#generator">Ułóż plan rodzinny →</a><a class="btn alt" href="#trening">Przejdź do treningu</a></div><div class="chips"><span class="chip good">✓ Bez rejestracji</span><span class="chip good">✓ Dane nie są wysyłane</span><span class="chip warm">✓ Plan do druku</span></div></div><div class="hero-art" aria-hidden="true"><div class="symbols"><span class="symbol">⌂</span><span class="symbol">✦</span><span class="symbol">✓</span></div><div><span class="eyebrow">Plan · Kontakt · Ćwiczenie</span><b>Ustalenia, które zna cała rodzina.</b><small>Nie tylko lista przedmiotów. Także zasady postępowania.</small></div></div></div></section>
+<section class="hero wrap"><div class="hero-grid"><div><span class="eyebrow">Bezpłatne narzędzie · do samodzielnego wykorzystania</span><h1>Generator <em>rodzinnego planu</em> bezpieczeństwa</h1><figure class="bd-editorial"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 370" role="img" aria-labelledby="illustration-title illustration-desc">
+ <title id="illustration-title">Rodzina wspólnie omawia i zapisuje plan bezpieczeństwa.</title><desc id="illustration-desc">Ilustracja poglądowa przygotowana z pomocą sztucznej inteligencji; nie przedstawia rzeczywistego zdarzenia.</desc>
+ <defs><linearGradient id="bdBG" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#34564D"/><stop offset="1" stop-color="#597F84"/></linearGradient>
+ <radialGradient id="mist"><stop offset="0" stop-color="#DDEAE8" stop-opacity=".23"/><stop offset="1" stop-color="#DDEAE8" stop-opacity="0"/></radialGradient>
+ <filter id="shadow" x="-30%" y="-30%" width="170%" height="180%"><feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#1C3949" flood-opacity=".14"/></filter></defs>
+ <rect width="1080" height="370" rx="16" fill="url(#bdBG)"/><rect x="410" y="0" width="670" height="370" fill="#E8EFEB"/>
+ <circle cx="263" cy="183" r="233" fill="url(#mist)"/>
+ <path d="M63 284 H359" stroke="#C7DFDA" opacity=".46" stroke-width="2"/>
+ <path d="M63 310 H298" stroke="#C7DFDA" opacity=".34" stroke-width="2"/>
+ <path d="M63 337 H238" stroke="#C7DFDA" opacity=".25" stroke-width="2"/>
+ <path d="M310 0 L444 0 L418 370 L344 370 Z" fill="#C5DCD5" opacity=".08"/>
+ <rect x="425" y="32" width="626" height="308" rx="23" fill="#FAFBF8" opacity=".55"/>
+ 
+ <!-- family meeting at kitchen table with non-personal checklist illustration -->
+ <rect x="444" y="222" width="555" height="118" rx="39" fill="#B6C8BF"/>
+ <path d="M464 288 H979" stroke="#91ABA2" stroke-width="5"/>
+ <!-- three abstract adult/child figures -->
+ <circle cx="521" cy="139" r="39" fill="#D9BBA8"/><path d="M462 231 Q472 177 520 177 Q567 177 582 231" fill="#5D7681"/>
+ <path d="M487 130 Q498 97 530 99 Q561 106 558 133" fill="none" stroke="#4F5557" stroke-width="20" stroke-linecap="round"/>
+ <circle cx="914" cy="139" r="37" fill="#D8B8A1"/><path d="M853 235 Q865 177 911 176 Q967 181 973 235" fill="#7B958B"/>
+ <path d="M875 130 Q876 89 916 93 Q942 95 950 130" fill="none" stroke="#5D4D48" stroke-width="21" stroke-linecap="round"/>
+ <circle cx="738" cy="190" r="30" fill="#D9BCA8"/><path d="M685 241 Q704 213 738 216 Q778 217 794 241" fill="#B28D72"/>
+ <!-- actual document with information hierarchy, no fake readable text -->
+ <g filter="url(#shadow)"><path d="M612 252 L817 249 L808 334 L621 334 Z" fill="#F8F8F2"/></g>
+ <path d="M639 276 H781 M639 291 H750 M639 309 H784" stroke="#96B0AA" stroke-width="7" stroke-linecap="round"/>
+ <circle cx="645" cy="276" r="4" fill="#527F77"/><circle cx="645" cy="292" r="4" fill="#527F77"/><circle cx="645" cy="309" r="4" fill="#527F77"/>
+ <path d="M556 221 L616 280 M861 219 L816 287" stroke="#D9BBA8" stroke-width="19" stroke-linecap="round"/>
+ 
+ </svg><figcaption>Ilustracja poglądowa przygotowana z pomocą AI. Nie przedstawia rzeczywistego zdarzenia ani oficjalnego oznakowania.</figcaption></figure><p>Ustalcie, jak będziecie się kontaktować, gdzie spotkacie się w razie rozdzielenia i kto pomoże dzieciom lub bliskim wymagającym wsparcia. Na końcu wydrukujcie własne ustalenia i przećwiczcie kilka sytuacji.</p><div class="hero-cta"><a class="btn" href="#generator">Ułóż plan rodzinny →</a><a class="btn alt" href="#trening">Przejdź do treningu</a></div><div class="chips"><span class="chip good">✓ Bez rejestracji</span><span class="chip good">✓ Dane nie są wysyłane</span><span class="chip warm">✓ Plan do druku</span></div></div><div class="hero-art" aria-hidden="true"><div class="symbols"><span class="symbol">⌂</span><span class="symbol">✦</span><span class="symbol">✓</span></div><div><span class="eyebrow">Plan · Kontakt · Ćwiczenie</span><b>Ustalenia, które zna cała rodzina.</b><small>Nie tylko lista przedmiotów. Także zasady postępowania.</small></div></div></div></section>
 <div class="wrap"><aside class="notice"><b>Ważne:</b> to niezależny materiał edukacyjny projektu Bezpieczne Dzieci, a nie oficjalna aplikacja MSWiA ani certyfikowany plan ewakuacyjny. W przypadku rzeczywistego zagrożenia wykonuj polecenia służb i stosuj się do treści aktualnych ostrzeżeń. Miejsce bezpieczne zależy od rodzaju zagrożenia – inne zasady obowiązują przy pożarze, inne przy powodzi czy zagrożeniu z powietrza.</aside></div>
 <section id="generator" class="wrap"><div class="section-heading"><span class="eyebrow">Część 1 / Wasze ustalenia</span><h2>Utwórz plan, który można mieć na papierze</h2><p>Wpisz tylko informacje potrzebne domownikom. Pola są opcjonalne, ale bez kontaktów i miejsc spotkania plan będzie niekompletny. Jeśli wprowadzasz numery telefonów lub imiona dzieci, nie udostępniaj publicznie wydruku.</p></div>
 <div class="layout"><div class="panel" id="formPanel">
@@ -83,7 +117,7 @@
 <section class="wrap learning-hub" id="materialy" aria-labelledby="materialy-title">
   <div class="section-heading"><span class="eyebrow">Poznaj więcej materiałów</span><h2 id="materialy-title">Co jeszcze warto przećwiczyć z dzieckiem?</h2><p>Rodzinny plan bezpieczeństwa to początek. Wybierz poradnik lub trening dopasowany do sytuacji, o której chcecie porozmawiać. Wszystkie materiały są dostępne bezpłatnie.</p></div>
   <nav class="learning-grid" aria-label="Powiązane materiały na BezpieczneDzieci.com">
-    <a class="learning-card" href="gra-edukacyjna-bezpieczenstwo-dzieci.html"><span class="learning-type">Gra edukacyjna</span><h3>Misja: Bezpieczni</h3><p>Sygnały alarmowe, Alert RCB i numer 112 w interaktywnym ćwiczeniu dla dzieci.</p><span class="learning-go">Graj i ucz się <span aria-hidden="true">→</span></span></a>
+    <a class="learning-card" href="gra-edukacyjna-bezpieczenstwo-dzieci.html"><span class="learning-type">Gra edukacyjna</span><h3>8 misji: Podejmij decyzję</h3><p>Sygnały alarmowe, Alert RCB i numer 112 w interaktywnym ćwiczeniu dla dzieci.</p><span class="learning-go">Graj i ucz się <span aria-hidden="true">→</span></span></a>
 <a class="learning-card" href="https://bezpiecznedzieci.com/sygnaly-alarmowe-szkola.html"><span class="learning-type">Poradnik</span><h3>Sygnały alarmowe w szkole</h3><p>Jak rozpoznać ogłoszenie alarmu, odwołanie i komunikaty ostrzegawcze.</p><span class="learning-go">Poznaj sygnały <span aria-hidden="true">→</span></span></a>
 <a class="learning-card" href="https://bezpiecznedzieci.com/rodzice-alarm-w-szkole.html"><span class="learning-type">Dla rodziców</span><h3>Rodzice podczas alarmu w szkole</h3><p>Co uzgodnić ze szkołą i dlaczego odbiór dziecka w trakcie zagrożenia wymaga ostrożności.</p><span class="learning-go">Przeczytaj poradnik <span aria-hidden="true">→</span></span></a>
 <a class="learning-card" href="https://bezpiecznedzieci.com/miejsce-schronienia-w-szkole.html"><span class="learning-type">Praktyczny poradnik</span><h3>Jak wybrać miejsce schronienia?</h3><p>Czym kierować się przy wyborze miejsca, w którym szukamy osłony.</p><span class="learning-go">Sprawdź wskazówki <span aria-hidden="true">→</span></span></a>
@@ -96,7 +130,7 @@
 </section>
 
 </main>
-<footer class="footer"><div class="wrap"><strong>Bezpieczne Dzieci</strong> · projekt edukacyjny · Autor: Marcin Pietkiewicz · aktualizacja: 8 października 2026 r.<div class="footer-links"><a href="index.html">Strona główna</a><a href="#generator">Generator</a><a href="#trening">Trening rodzinny</a><a href="#materialy">Inne materiały</a><a href="https://marcin-pietkiewicz.pl/" rel="author noopener noreferrer" target="_blank">O autorze</a></div><p>Informacje mają charakter edukacyjny. Materiał opracowano samodzielnie na podstawie ogólnodostępnych źródeł; nie kopiowano zewnętrznych grafik ani znaków instytucji publicznych.</p></div></footer>
+<footer class="footer"><div class="wrap"><strong>Bezpieczne Dzieci</strong> · projekt edukacyjny · Autor: Marcin Pietkiewicz · aktualizacja: 8 października 2026 r.<div class="footer-links"><a href="index.html">Strona główna</a><a href="#generator">Generator</a><a href="#trening">Trening rodzinny</a><a href="#materialy">Inne materiały</a><a href="https://marcin-pietkiewicz.pl/" rel="author noopener noreferrer" target="_blank">O autorze</a></div><p>Informacje mają charakter edukacyjny. Materiał opracowano samodzielnie na podstawie ogólnodostępnych źródeł; nie kopiowano zewnętrznych grafik ani znaków instytucji publicznych.</p></div><p class="bd-editorial-footer" style="margin:14px 0 4px;font-size:.85rem;line-height:1.6"><a href="/#metodologia">O projekcie, źródłach i sposobie przygotowywania materiałów</a></p></footer>
 <section id="printSheet" aria-label="Plan rodzinny do wydruku"><div class="print-title">Rodzinny plan bezpieczeństwa</div><p class="print-meta">Bezpieczne Dzieci · wygenerowano: <span id="printDate"></span> · Prywatny dokument dla domowników</p><div class="print-badge">112 – tylko przy nagłym zagrożeniu życia, zdrowia, mienia lub bezpieczeństwa. Słuchaj poleceń operatora i służb.</div><div class="print-grid" id="printGrid"></div><p class="print-note">Plan ma charakter pomocniczy i powinien być regularnie aktualizowany. W zagrożeniu stosuj się do aktualnych komunikatów i poleceń służb. Nie udostępniaj wydruku z danymi kontaktowymi publicznie. Źródła i aktualne wskazówki: gov.pl/web/poradnikbezpieczenstwa.</p></section>
 <script>
 (()=>{'use strict';
