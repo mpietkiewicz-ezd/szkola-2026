@@ -20,3 +20,15 @@
 .bd-special-note a{color:#b4f4e6;text-decoration:underline}
 .bd-simple-footer a:focus-visible,.bd-license-badge a:focus-visible{outline:3px solid #ffc665;outline-offset:3px}
 @media(max-width:640px){.bd-special-note{margin:14px 16px;padding:14px}}
+
+/* 2026-10-13: compact attribution and licensing throughout the website */
+.bd-simple-footer{background:#082632;color:#dcebee;padding:0!important;font-size:14px;line-height:1.6}
+.bd-simple-footer .bd-foot-inner{padding:18px 0;gap:10px 24px}
+.bd-foot-credit{font-size:14px;line-height:1.7;color:#dcebee}
+.bd-simple-footer .bd-foot-credit a{color:#c1efe6;text-decoration:underline;text-underline-offset:3px}
+.bd-simple-footer .bd-footer-links{gap:8px 16px}
+.bd-simple-footer .bd-footer-links a{color:#dcebee}
+.bd-refbar{max-width:1080px;margin:24px auto 12px}
+.bd-extra-references{margin:15px 0 0;font-size:.95rem;line-height:1.65}
+.bd-extra-references a{word-break:break-word}
+@media(max-width:720px){.bd-simple-footer .bd-foot-inner{padding:18px 0;display:flex;flex-direction:column;align-items:flex-start}.bd-simple-footer .bd-footer-links{gap:7px 16px}.bd-foot-credit{font-size:13.5px}}
