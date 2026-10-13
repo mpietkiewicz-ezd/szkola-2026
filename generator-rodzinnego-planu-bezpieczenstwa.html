@@ -49,8 +49,24 @@
 @media(max-width:760px){.training{margin-top:22px;margin-bottom:34px}.training-grid{grid-template-columns:1fr}.learning-hub{margin-bottom:32px}.learning-grid{gap:10px}.top-links{gap:10px}.top-links a{font-size:11px}}
 @media(max-width:540px){.learning-grid{grid-template-columns:1fr}.learning-card{padding:16px}.learning-card p{margin-bottom:12px}.top-links a[href="#poradnik"]{display:none}.top-links a[href="#materialy"]{display:none}}
 </style>
-<link rel="stylesheet" href="editorial.css">
 <link rel="stylesheet" href="brand-unified.css">
+<style id="bd-refbar-style">
+/* Krótka lista źródeł bez kolejnej karty autora. */
+.bd-refbar{display:block;box-sizing:border-box;width:min(1040px,calc(100% - 32px));max-width:1040px;margin:24px auto 16px;padding:12px 0;border-top:1px solid rgba(116,162,163,.45);background:transparent;color:inherit;text-align:left;font:400 13px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:normal;clear:both}
+.bd-refbar summary{cursor:pointer;font-size:14px;font-weight:700;line-height:1.45;color:inherit;display:list-item;margin-left:17px;padding:2px 0}
+.bd-refbar summary:hover{text-decoration:underline;text-underline-offset:3px}
+.bd-refbar a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.bd-refbar ul{margin:10px 0 5px;padding-left:24px;list-style:disc}
+.bd-refbar li{margin:4px 0;padding:0;color:inherit;list-style:disc}
+.bd-refbar .bd-ref-explainer{margin:7px 0;color:inherit;opacity:.82;font-size:12px}
+.bd-refbar summary:focus-visible,.bd-refbar a:focus-visible{outline:2px solid #f0b95c;outline-offset:3px}
+.bd-compact-footer{font-size:13px!important;padding:20px 0 24px!important;margin-top:20px!important;background:transparent!important;color:inherit!important;border-top:1px solid rgba(133,167,170,.3)!important}
+.bd-compact-footer .bd-foot-inner{width:min(1100px,calc(100% - 32px));margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px 24px}
+.bd-compact-footer p{margin:0!important;color:inherit!important;font-size:13px!important;line-height:1.5!important}
+.bd-compact-footer nav{display:flex;flex-wrap:wrap;align-items:center;gap:9px 16px}
+.bd-compact-footer a{color:inherit!important;text-decoration:underline!important;text-underline-offset:3px}
+@media(max-width:600px){.bd-refbar{margin:12px auto;padding:11px 0}.bd-compact-footer .bd-foot-inner{align-items:flex-start;flex-direction:column}}
+</style>
 </head>
 <body>
 <header class="top"><div class="wrap top-in"><a class="brand" href="index.html" aria-label="Bezpieczne Dzieci — strona główna"><span class="mark">BD</span><span><strong>BEZPIECZNE DZIECI</strong><small>bezpieczeństwo szkoły i rodziny</small></span></a><nav class="top-links" aria-label="Skróty"><a href="#generator">Generator</a><a href="#trening">Trening</a><a href="#poradnik">Poradnik</a><a href="#materialy">Inne materiały</a><a href="index.html">Strona główna ↗</a></nav></div></header>
@@ -90,9 +106,7 @@
   </nav>
   <p class="learning-footnote">Dla młodszych dzieci zacznij od gry edukacyjnej. Materiały o reagowaniu na przemoc i zarządzaniu sytuacją kryzysową są przeznaczone do omówienia z dorosłym lub dla personelu szkoły.</p>
 </section>
-
-
-<section class="bd-ed-info" aria-labelledby="bd-ed-title"><h2 id="bd-ed-title" class="bd-ed-title">Opracowanie i źródła</h2><div class="bd-ed-meta"><div class="bd-ed-meta-item"><span class="bd-ed-label">Autor</span><p><a href="https://marcin-pietkiewicz.pl/" rel="author noopener noreferrer" target="_blank">Marcin Pietkiewicz</a></p></div><div class="bd-ed-meta-item"><span class="bd-ed-label">Publikacja</span><p><time datetime="2026-10-08">8 października 2026 r.</time></p></div><div class="bd-ed-meta-item"><span class="bd-ed-label">Przegląd redakcyjny</span><p><time datetime="2026-10-13">13 października 2026 r.</time></p></div></div><details class="bd-ed-details"><summary>Materiały źródłowe (3)</summary><ul class="bd-ed-sources"><li><a href="https://www.gov.pl/web/poradnikbezpieczenstwa" target="_blank" rel="noopener noreferrer">Rządowy Poradnik bezpieczeństwa ↗</a></li><li><a href="https://www.gov.pl/web/edukacja/wiedza-moja-tarcza--prezentujemy-poradniki-bezpieczenstwa-dla-uczniow-szkol-podstawowych" target="_blank" rel="noopener noreferrer">MEN: „Wiedza moją Tarczą” – poradniki dla uczniów ↗</a></li><li><a href="https://www.gov.pl/web/numer-alarmowy-112/jak-zglaszac" target="_blank" rel="noopener noreferrer">Numer alarmowy 112: jak zgłaszać? ↗</a></li></ul></details><p class="bd-ed-note">Autorski materiał edukacyjny. Przegląd redakcyjny nie jest ponowną kontrolą wszystkich zaleceń bezpieczeństwa. Publikacje instytucji zewnętrznych nie oznaczają zatwierdzenia serwisu.</p><a class="bd-ed-policy" href="o-autorze-i-zrodlach.html">Więcej o autorze i źródłach →</a></section>
+<aside class="bd-refbar" aria-label="Źródła materiału"><details><summary>Źródła tego materiału (3)</summary><ul><li><a href="https://www.gov.pl/web/poradnikbezpieczenstwa" target="_blank" rel="noopener noreferrer">Rządowy Poradnik bezpieczeństwa</a></li><li><a href="https://www.gov.pl/web/edukacja/wiedza-moja-tarcza--prezentujemy-poradniki-bezpieczenstwa-dla-uczniow-szkol-podstawowych" target="_blank" rel="noopener noreferrer">MEN: „Wiedza moją Tarczą” – poradniki dla uczniów</a></li><li><a href="https://www.gov.pl/web/numer-alarmowy-112/jak-zglaszac" target="_blank" rel="noopener noreferrer">Numer alarmowy 112: jak zgłaszać?</a></li></ul><p class="bd-ref-explainer">Materiały instytucji publicznych są źródłami informacji, nie oznaczają ich zatwierdzenia tego serwisu. <a href="o-autorze-i-zrodlach.html">O autorze i sposobie opracowania</a>.</p></details></aside>
 </main>
 <footer class="footer"><div class="wrap"><strong>Bezpieczne Dzieci</strong> · projekt edukacyjny · Autor: Marcin Pietkiewicz · aktualizacja: 8 października 2026 r.<div class="footer-links"><a href="index.html">Strona główna</a><a href="#generator">Generator</a><a href="#trening">Trening rodzinny</a><a href="#materialy">Inne materiały</a><a href="https://marcin-pietkiewicz.pl/" rel="author noopener noreferrer" target="_blank">O autorze</a></div><p>Informacje mają charakter edukacyjny. Materiał opracowano samodzielnie na podstawie ogólnodostępnych źródeł; nie kopiowano zewnętrznych grafik ani znaków instytucji publicznych.</p></div></footer>
 <section id="printSheet" aria-label="Plan rodzinny do wydruku"><div class="print-title">Rodzinny plan bezpieczeństwa</div><p class="print-meta">Bezpieczne Dzieci · wygenerowano: <span id="printDate"></span> · Prywatny dokument dla domowników</p><div class="print-badge">112 – tylko przy nagłym zagrożeniu życia, zdrowia, mienia lub bezpieczeństwa. Słuchaj poleceń operatora i służb.</div><div class="print-grid" id="printGrid"></div><p class="print-note">Plan ma charakter pomocniczy i powinien być regularnie aktualizowany. W zagrożeniu stosuj się do aktualnych komunikatów i poleceń służb. Nie udostępniaj wydruku z danymi kontaktowymi publicznie. Źródła i aktualne wskazówki: gov.pl/web/poradnikbezpieczenstwa.</p></section>
