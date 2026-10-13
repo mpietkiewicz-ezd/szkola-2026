@@ -1,0 +1,12 @@
+/* Bezpieczne Dzieci — wspólny znak BD i mały nagłówek dla stron informacyjnych. */
+a.brand>.brand-mark,a.brand>.logo,a.brand>.mark,a.brand>div.brand-mark{width:44px!important;height:44px!important;min-width:44px!important;flex:0 0 44px!important;background:#154337!important;color:#c2e6d4!important;border:1px solid #397968!important;border-radius:12px!important;display:grid!important;place-items:center!important;font:950 18px/1 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;letter-spacing:-.06em!important;text-decoration:none!important}
+a.brand>.logo span,a.brand>div.brand-mark span{color:inherit!important;font:inherit!important}
+a.brand{max-width:100%;min-width:0}
+a.brand:focus-visible,.bd-mini-brand:focus-visible,.bd-mini-return:focus-visible{outline:3px solid #e4ac49!important;outline-offset:4px!important}
+.bd-mini-header{display:flex!important;justify-content:space-between!important;align-items:center!important;flex-wrap:wrap!important;gap:12px!important}
+a.bd-mini-brand{display:inline-flex!important;align-items:center!important;gap:11px!important;color:#fff!important;text-decoration:none!important;line-height:1.17!important}
+a.bd-mini-brand strong{display:block!important;font-size:17px!important;line-height:1.2!important;letter-spacing:-.02em!important}
+a.bd-mini-brand small{display:block!important;color:#d0e2e4!important;font-size:11px!important;margin-top:3px!important}
+.bd-mini-mark{width:42px;height:42px;flex:0 0 42px;background:#154337;color:#c2e6d4;border:1px solid #397968;border-radius:11px;display:grid;place-items:center;font:950 17px/1 system-ui,sans-serif;letter-spacing:-.06em}
+a.bd-mini-return{color:#d8f0ec!important;font-size:13px!important;text-decoration:underline!important;text-underline-offset:4px!important}
+@media(max-width:600px){a.brand>.brand-mark,a.brand>.logo,a.brand>.mark,a.brand>div.brand-mark{height:40px!important;width:40px!important;min-width:40px!important;flex-basis:40px!important}.bd-mini-header{gap:8px!important}.bd-mini-brand small{display:none!important}.bd-mini-return{font-size:12px!important}}
