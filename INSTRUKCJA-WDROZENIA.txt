@@ -1,32 +1,47 @@
-WDROŻENIE: BEZPIECZNE DZIECI — WERSJA SEO / LOSOWANIE A-B-C
-Data: 12.10.2026
+BEZPIECZNE DZIECI | GENERATOR PROCEDURY ZAGROŻENIA Z POWIETRZA
+Wersja 2026-10-16 – przebudowa do pracy z dyrekcją na tablecie
 
-ZAWARTOŚĆ: index.html (dopasowany do przesłanego pliku index (11).html), 7 nowych podstron HTML, sitemap.xml.
+CO WGRAC NA SERWER:
+1. index.html – zastępuje obecną stronę główną (na podstawie dostarczonego „index (12).html”).
+2. generator-procedury-zagrozenie-z-powietrza.html – nowa podstrona.
+3. generator-procedury-zagrozenie-z-powietrza.css – arkusz stylów generatora.
+4. generator-procedury-zagrozenie-z-powietrza.js – działanie generatora i eksport Word.
 
-1. ZRÓB KOPIĘ aktualnego index.html i sitemap.xml na serwerze.
-2. Wgraj index.html oraz siedem nowych plików .html do katalogu głównego domeny bezpiecznedzieci.com.
-3. Wgraj nową sitemap.xml do katalogu głównego jako /sitemap.xml.
-4. Nie usuwaj starych podstron i plików graficznych: index nadal z nich korzysta.
-5. Sprawdź, czy wszystkie adresy w sitemap odpowiadają rzeczywistym podstronom HTTP 200. Część starych URL-i pochodzi z przesłanego index.html, ale nie mogłem sprawdzić ich statusów na serwerze.
-6. Jeśli w robots.txt brak odnośnika do mapy, dodaj: Sitemap: https://bezpiecznedzieci.com/sitemap.xml (nie nadpisuj innych reguł).
-7. Zgłoś ponownie sitemap.xml w Google Search Console. Indeksacja i ranking nie są gwarantowane.
-8. Sprawdź na telefonie grę od początku do końca, warianty poprawnej litery i czytelność.
+Wszystkie 4 pliki wgraj do tego samego katalogu, w którym obecnie znajduje się index.html.
+Zachowaj pozostałe pliki serwisu: brand-unified.css, footer-unified.css, hero-school.jpg,
+favicon.png, poradniki, gry itd. Żaden z tych plików nie został w paczce podmieniony.
 
-UWAGI O LOSOWANIU
-- 6 pytań: dokładnie 2 poprawne na A, 2 na B i 2 na C w każdej nowej rozgrywce.
-- Losowa jest kolejność pytań i odpowiedzi; każde ponowne uruchomienie przelicza kolejność.
-- Losowanie z crypto.getRandomValues z awaryjnym Math.random. Wyniki przechowywane tylko podczas bieżącej sesji przeglądarki, bez przesyłania.
+LINK PO WDROŻENIU:
+https://bezpiecznedzieci.com/generator-procedury-zagrozenie-z-powietrza.html
 
-SEO
-- Unikalne title, description, H1, uzupełnione sekcje tematyczne i FAQ widoczne bez JavaScript.
-- BreadcrumbList i LearningResource (JSON-LD), poprawny canonical, wewnętrzne linki kontekstowe, sitemap.xml z wiarygodnym lastmod.
-- FAQ to zwykła treść dla użytkownika; brak obietnicy wyświetlania rozszerzonych wyników Google.
-- Pamiętaj o testach Search Console, indeksacji i dalszym rozbudowywaniu przydatnej treści.
+GDZIE GENERATOR DODANO W INDEX.HTML:
+- Trzecia karta w sekcji „Nie tylko czytanie” / Praktyczne narzędzia.
+- Pierwsza pozycja w sekcji „Materiały do wykorzystania w szkole i przedszkolu”.
+- Odnośnik w stopce.
 
-PRAWA AUTORSKIE
-- Tematy odpowiadają powszechnym potrzebom edukacyjnym, a opisy i scenariusze są autorskie. Nie kopiowano materiałów MEN.
-- Do poradników MEN prowadzi informacyjny odsyłacz, bez sugerowania zatwierdzenia lub współpracy.
+SPOSÓB PRACY W SZKOLE:
+1. Otwórz generator na tablecie. W formularzu jest 6 części.
+2. Wpisz dane placówki, liczbę osób, miejsca schronienia i przydziały grup.
+3. Ustal role, kanały informowania, sytuacje szczególne i wyposażenie.
+4. Jeśli rozwiązanie nie jest potwierdzone – nie zaznaczaj go jako potwierdzone.
+5. Kliknij „Word i kontrola”. Odczytaj z dyrekcją uwagi i pobierz plik .docx.
+6. Otwórz plik w edytorze Word; uzupełnij rzuty oraz brakujące uzgodnienia.
+7. Po weryfikacji i zatwierdzeniu przez osoby uprawnione można drukować dokument.
 
-WYKAZ ADRESÓW W NOWEJ SITEMAP: 21 (łącznie ze stroną główną; nowe podstrony 7).
+PRZERWANIE SPOTKANIA:
+„Zapisz wypełniony formularz” pobiera lokalny plik JSON. Ponowne wczytanie
+jest dostępne przyciskiem „Wczytaj wcześniejszą pracę”. Pamiętaj, że plik
+JSON może zawierać wewnętrzne informacje o budynku; przechowuj go bezpiecznie.
+Generator celowo nie zapisuje tych danych w chmurze ani localStorage.
 
-Pliki przygotowano w oparciu o dostarczoną wersję strony głównej; nie modyfikowano kodu symulatora.
+WAŻNE ZASADY:
+- Wygenerowany Word jest PROJEKTEM procedury – nie daje certyfikatu bezpieczeństwa.
+- Miejsce, pojemność, status i drogi wymagają faktycznej weryfikacji.
+- Nie publikuj szczegółowych planów budynku ani przydziałów w internecie.
+- W sytuacji rzeczywistego zagrożenia pierwszeństwo mają komunikaty i polecenia służb.
+- Generator nie zastępuje ćwiczeń ewakuacyjnych wymaganych przepisami ochrony ppoż.
+
+Oficjalne źródło: https://www.gov.pl/web/edukacja/procedura-przygotowania-i-reagowania-po-otrzymaniu-komunikatu-o-zagrozeniu-z-powietrza
+
+Po wgraniu sprawdź stronę w trybie prywatnym i w razie potrzeby odśwież
+cache przeglądarki, aby pobrać najnowszy JS i CSS.
